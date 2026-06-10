@@ -45,7 +45,6 @@ body {
   line-height: 1.8;
   background-color: #f3f4f6;
   position: relative;
-  /* ✅ اصلاح شده: جایگزینی متغیرهای بلاگیکس با مقادیر واقعی */
   background-image: url('https://uploadkon.ir/uploads/d81010_26site-nahai-6.png'), linear-gradient(to bottom right, #caf4ff, #73e1fd);
   background-size: 100% auto;
   background-attachment: scroll;
@@ -85,17 +84,9 @@ summary { display: list-item; }
 * { box-sizing: border-box; }
 img { max-width: 100%; height: auto; display: block; }
 
-.post { border-radius: 12px; margin-bottom: 30px; }
 .wrap { width: 100%; max-width: 992px; padding-right: 15px; padding-left: 15px; margin-left: auto; margin-right: auto; }
 a { color: #626b7f; text-decoration: none; }
 a:hover { color: #a3aab8; }
-
-/* ✅ اصلاح شده: رنگ‌های واقعی جایگزین شدند */
-.brColor { border-color: #37d7ff; }
-.bgColor { color: #ffffff; background-color: #000000; }
-.postinfo { color: #0098be; }
-.postinfo a { color: #0098be; }
-.post { background-color: #ffffff; color: #0098be; overflow: hidden; }
 
 .header-placeholder {
   padding: 997px 15px;
@@ -103,60 +94,6 @@ a:hover { color: #a3aab8; }
   background: transparent;
   border-radius: 30px;
   min-height: 270px;
-}
-.part { display: flex; flex-direction: row; justify-content: space-between; flex-wrap: wrap; }
-.content { width: 100%; max-width: 100%; }
-.sidebar { width: 0; max-width: 0; }
-
-.postTitle { background-color: #37d7ff; margin: 0; padding: 15px; border-radius: 12px 12px 0 0; display: -webkit-box; line-clamp: 1; -webkit-line-clamp: 1; -webkit-box-orient: vertical; }
-.postTitle, .postTitle a, .postcontent { font-family: Unigeo64, sina, sans-serif !important; }
-.postTitle a, .postcontent a { font-weight: 800; }
-.postcontent { color: #0098be; padding: 20px 15px; padding-bottom: 0; word-wrap: break-word; overflow-wrap: break-word; }
-.continueButton { width: 100px; display: block; margin-right: auto; text-align: center; border-radius: 12px; padding: 5px 0; border-width: 2px; border-style: solid; }
-.postTag { margin-top: 15px; }
-.postTag a { color: #0098be; }
-.postTitle a { color: #ffffff; }
-.postTitle img { position: relative; top: -3px; float:left; height: 45px; width:0px; border-radius:22.5px; }
-.postBorder { border-color: #37d7ff; border-width: 0px; border-style: solid; border-top: none; border-radius: 0 0 12px 12px; }
-.postComment a { margin-right: 20px; }
-.postInfoFooter { padding: 10px 15px; }
-
-.nextandprevious { margin-bottom: 30px; }
-.nextandprevious a { padding: 5px 0; border-radius: 12px; width: 100px; text-align: center; display: block; border-color: #37d7ff; border-width: 2px; border-style: solid; background-color: #ffffff; color: #0098be; }
-.previouslink { float: right; }
-.nextlink { float: left; }
-
-.box { background-color: #ffffff; color: #0098be; margin-bottom: 30px; overflow: hidden; border-radius: 12px; }
-.box h6 { background-color: #37d7ff; color: #ffffff; padding: 15px; margin: 0; font-size: 11pt; font-weight: 400; border-radius: 12px 12px 0 0; }
-.boxPadding { padding: 15px; border-style: solid; border-width: 2px; border-top: none; border-radius: 0 0 12px 12px; margin: 0; }
-.boxPadding li { list-style: none; }
-.boxPadding li a { color: #0098be; }
-.clear { clear: both; }
-
-@media screen and (max-width: 992px) {
-  .content, .sidebar { width: 100%; max-width: 100%; }
-  .part { flex-direction: column; }
-}
-@media screen and (max-width: 768px) {
-  .header-placeholder { padding: 150px 15px; margin-bottom: 30px; border-radius: 20px; min-height: 150px; }
-  .postTitle { padding: 12px 10px; font-size: 13pt; }
-  .postcontent { padding: 15px 12px; font-size: 12pt; }
-  .continueButton, .nextandprevious a { width: 90px; font-size: 10pt; padding: 4px 0; }
-  .box h6 { font-size: 12pt; padding: 12px; }
-  .previouslink, .nextlink { float: none; display: block; margin: 5px auto; }
-}
-@media screen and (max-width: 480px) {
-  .wrap { padding-right: 10px; padding-left: 10px; }
-  .header-placeholder { padding: 120px 10px; margin: 15px auto; border-radius: 15px; min-height: 120px; }
-  .post { border-radius: 12px; margin-bottom: 20px; }
-  .postTitle { padding: 10px 8px; font-size: 12pt; border-radius: 12px 12px 0 0; }
-  .postBorder { border-radius: 0 0 12px 12px; }
-  .postcontent { padding: 12px 10px; font-size: 11pt; line-height: 1.6; }
-  .postinfo { font-size: 10pt; }
-  .continueButton, .nextandprevious a { width: 100%; max-width: 120px; margin: 5px auto; border-radius: 12px; }
-  .box { border-radius: 12px; margin-bottom: 20px; }
-  .box h6 { font-size: 11pt; padding: 10px; border-radius: 12px 12px 0 0; }
-  .boxPadding { padding: 12px 10px; border-radius: 0 0 12px 12px; }
 }
 
 html, body { max-width: 100%; overflow-x: hidden; }
@@ -190,7 +127,7 @@ html, body { max-width: 100%; overflow-x: hidden; }
 }
 
 /* ========================================== */
-/* ✅ آیکون "click here" - اصلاح شده */
+/* ✅ آیکون "click here" */
 /* ========================================== */
 .slider-click-hint {
   position: absolute;
@@ -241,7 +178,7 @@ html, body { max-width: 100%; overflow-x: hidden; }
 }
 
 /* ========================================== */
-/* ✅ اطلاعات تماس - اصلاح شده */
+/* ✅ اطلاعات تماس */
 /* ========================================== */
 .contact-footer {
   text-align: center;
@@ -402,7 +339,6 @@ html, body { max-width: 100%; overflow-x: hidden; }
 .slider-mobile-title { display: none; }
 
 @media screen and (max-width: 768px) {
-  /* ✅ اصلاح شده: پس‌زمینه موبایل با مقادیر واقعی */
   body {
     background-image: url('https://uploadkon.ir/uploads/7f2d10_26site-akharin.png'), linear-gradient(to bottom right, #caf4ff, #73e1fd) !important;
     background-size: 100% auto !important;
@@ -421,13 +357,6 @@ html, body { max-width: 100%; overflow-x: hidden; }
   .sticker-layer {
     display: none !important;
     visibility: hidden !important;
-  }
-  .sidebar {
-    display: none !important;
-  }
-  .content {
-    width: 100% !important;
-    max-width: 100% !important;
   }
   .header-placeholder {
     padding: 320px 15px !important;
@@ -699,102 +628,6 @@ html, body { max-width: 100%; overflow-x: hidden; }
   </div>
 </div>
 
-<!-- ✅ بخش مطالب (استاتیک شده برای گیت‌هاب) -->
-<div class="wrap part">
-  <div class="content">
-    
-    <!-- نمونه پست ۱: برای اضافه کردن پست جدید، کل این بلوک div با کلاس post را کپی کنید -->
-    <div id="post-1" class="post">
-      <h2 class="postTitle oneline">
-        <a href="#">عنوان نمونه پست اول شما در اینجا قرار می‌گیرد</a>
-        <!-- اگر تصویر پروفایل دارید آدرس آن را در src قرار دهید -->
-        <img src="https://uploadkon.ir/uploads/0d8624_263.svg" onerror="this.onerror = null; this.src = 'https://uploadkon.ir/uploads/0d8624_263.svg';" alt="نویسنده">
-      </h2>
-      <div class="postBorder brColor">
-        <div class="postcontent">
-          <p>این یک متن نمونه برای نمایش محتوای پست است. شما می‌توانید متن، تصویر یا هر محتوای دیگری را در اینجا قرار دهید. چون این کد برای گیت‌هاب بهینه شده، دیگر نیازی به تگ‌های خاص بلاگیکس نیست.</p>
-          <div class="postTag">
-            <span>برچسب‌ها: </span>
-            <a href="#">طراحی</a>, <a href="#">موشن گرافیک</a>
-          </div>
-        </div>
-        <div class="postinfo">
-          <div class="postInfoFooter">
-            نویسنده | ۱۱ خرداد ۱۴۰۵ - ۱۲:۰۰
-            | <a dir="rtl" href="#" target="_blank" class="postComment">۵ نظر</a>
-            | <a dir="rtl" href="#" target="_blank" class="postComment">۱۲ پسند</a>
-            | <a dir="rtl" href="#" target="_blank" class="postComment">ادامه مطلب</a>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- پایان نمونه پست ۱ -->
-
-    <!-- نمونه پست ۲ -->
-    <div id="post-2" class="post">
-      <h2 class="postTitle oneline">
-        <a href="#">عنوان نمونه پست دوم شما</a>
-        <img src="https://uploadkon.ir/uploads/0d8624_263.svg" onerror="this.onerror = null; this.src = 'https://uploadkon.ir/uploads/0d8624_263.svg';" alt="نویسنده">
-      </h2>
-      <div class="postBorder brColor">
-        <div class="postcontent">
-          <p>محتوای دومین پست نمونه. شما می‌توانید با کپی کردن ساختار بالا، بی‌نهایت پست به این صفحه اضافه کنید.</p>
-          <div class="postTag">
-            <span>برچسب‌ها: </span>
-            <a href="#">انیمیشن</a>, <a href="#">دانشگاهی</a>
-          </div>
-        </div>
-        <div class="postinfo">
-          <div class="postInfoFooter">
-            نویسنده | ۱۰ خرداد ۱۴۰۵ - ۰۹:۳۰
-            | <a dir="rtl" href="#" target="_blank" class="postComment">۲ نظر</a>
-            | <a dir="rtl" href="#" target="_blank" class="postComment">۸ پسند</a>
-            | <a dir="rtl" href="#" target="_blank" class="postComment">ادامه مطلب</a>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- پایان نمونه پست ۲ -->
-
-    <!-- دکمه‌های صفحه بعد و قبل -->
-    <div class="nextandprevious">
-      <a href="#" class="previouslink brColor">صفحه قبل</a>
-      <a href="#" class="nextlink brColor">صفحه بعد</a>
-      <div class="clear"></div>
-    </div>
-
-  </div>
-  
-  <!-- سایدبار (در دسکتاپ نمایش داده می‌شود، در موبایل مخفی است) -->
-  <div class="sidebar">
-    <div class="box">
-      <h6 class="bgColor">منو</h6>
-      <ul class="boxPadding brColor">
-        <li><a href="/">خانه</a></li>
-        <li><a href="/posts">عناوین</a></li>
-        <li><a href="/archive">آرشیو</a></li>
-      </ul>
-    </div>
-    
-    <div class="box">
-      <h6 class="bgColor">آخرین مطالب</h6>
-      <ul class="boxPadding brColor">
-        <li><a href="#" title="۱۱ خرداد ۱۴۰۵">عنوان نمونه پست اول شما در اینجا قرار می‌گیرد</a></li>
-        <li><a href="#" title="۱۰ خرداد ۱۴۰۵">عنوان نمونه پست دوم شما</a></li>
-      </ul>
-    </div>
-
-    <div class="box">
-      <h6 class="bgColor">برچسب‌ها</h6>
-      <ul class="boxPadding brColor">
-        <li><a href="#">طراحی</a> <span>(۲)</span></li>
-        <li><a href="#">موشن گرافیک</a> <span>(۵)</span></li>
-        <li><a href="#">انیمیشن</a> <span>(۳)</span></li>
-      </ul>
-    </div>
-  </div>
-</div>
-
 <!-- ✅ مودال ویدیو -->
 <div class="video-modal" id="videoModal">
   <div class="modal-video-container">
@@ -823,7 +656,6 @@ html, body { max-width: 100%; overflow-x: hidden; }
 document.addEventListener('DOMContentLoaded', () => {
   const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
   
-  // ✅ در دسکتاپ: ویدیوها را pause کن تا autoplay مزاحم نشه
   if (!isTouchDevice) {
     document.querySelectorAll('.slide-media').forEach(media => {
       if (media.tagName === 'VIDEO') {
@@ -895,7 +727,6 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     }
 
-    // ✅ در دسکتاپ: پخش با hover
     if (!isTouchDevice) {
       const slides = frame.querySelectorAll('.swiper-slide');
       slides.forEach(slide => {
