@@ -54,7 +54,7 @@ background-position: top center;
 background-repeat: no-repeat;
 -webkit-backface-visibility: hidden;
 backface-visibility: hidden;
-/* ✅ حذف transform برای رفع باگ position: fixed */
+/* ❌ FIX: Removed transform: translateZ(0) to prevent breaking position: fixed modals */
 min-height: 5800px;
 }
 html, body {
@@ -269,7 +269,7 @@ height: 18px;
 }
 }
 /* ========================================== */
-/* ✅ استایل‌های اسلایدر و مودال (اصلاح شده) */
+/* ✅ استایل‌های اسلایدر و مودال */
 /* ========================================== */
 :root { --slider-height: 540px; }
 .swiper-frame {
@@ -306,46 +306,37 @@ background: #000;
 .swiper-pagination-bullet { width: 8px !important; height: 8px !important; background: rgba(255,255,255,0.5) !important; opacity: 1 !important; margin: 0 6px !important; transition: all 0.3s ease !important; }
 .swiper-pagination-bullet-active { width: 24px !important; background: #ffffff !important; border-radius: 999px !important; }
 
-/* ✅ اصلاحیه اصلی مودال‌ها برای نمایش در مرکز صفحه */
-.video-modal, .image-modal {
-display: none;
-position: fixed;
-top: 0;
-left: 0;
-width: 100vw;
-height: 100vh;
-height: 100dvh; /* پشتیبانی بهتر از نوار ابزار موبایل */
-inset: 0; /* تضمین پوشش کامل viewport */
-background: rgba(0, 0, 0, 0.92);
-z-index: 99999;
-justify-content: center;
-align-items: center;
-opacity: 0;
-transition: opacity 0.3s ease;
-backdrop-filter: blur(8px);
+/* ✅ FIX: Added touch-action and overscroll-behavior to prevent iOS background scrolling */
+.video-modal, .image-modal { 
+    display: none; 
+    position: fixed; 
+    top: 0; 
+    left: 0; 
+    width: 100%; 
+    height: 100%; 
+    background: rgba(0, 0, 0, 0.92); 
+    z-index: 99999; 
+    justify-content: center; 
+    align-items: center; 
+    opacity: 0; 
+    transition: opacity 0.3s ease; 
+    backdrop-filter: blur(8px);
+    overscroll-behavior: none;
+    touch-action: none; 
 }
 .video-modal.active, .image-modal.active { display: flex; opacity: 1; }
 
-.modal-video-container, .modal-image-container { 
-position: relative; 
-width: 90vw; 
-max-width: 1100px; 
-max-height: 90vh; /* جلوگیری از بیرون زدگی از صفحه */
-display: flex; 
-flex-direction: column; 
-align-items: center; 
-justify-content: center; /* تراز عمودی کامل */
-}
+.modal-video-container { position: relative; width: 90vw; max-width: 1100px; display: flex; flex-direction: column; align-items: center; }
 .modal-video-container video { width: 100%; max-height: 80vh; border-radius: 12px; box-shadow: 0 15px 40px rgba(0,0,0,0.6); outline: none; background: #000; }
 .close-modal { position: absolute; top: -45px; right: 0; color: #fff; font-size: 32px; font-weight: bold; cursor: pointer; background: rgba(255,255,255,0.1); border: none; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; transition: background 0.2s; }
 .close-modal:hover { background: rgba(255,255,255,0.3); }
 .modal-title { color: #fff; font-family: 'Tarik', sans-serif; margin-top: 15px; font-size: 18px; text-align: center; direction: rtl; }
 
+.modal-image-container { position: relative; width: 90vw; max-width: 1100px; display: flex; flex-direction: column; align-items: center; }
 .modal-image-container img { max-width: 100%; max-height: 80vh; border-radius: 12px; box-shadow: 0 15px 40px rgba(0,0,0,0.6); outline: none; background: #000; transition: transform 0.3s ease; transform-origin: center center; cursor: zoom-in; user-select: none; touch-action: none; -webkit-user-drag: none; }
 .zoom-controls { position: absolute; bottom: -50px; display: flex; gap: 15px; z-index: 10; }
 .zoom-controls button { background: rgba(255,255,255,0.15); border: 1px solid rgba(255,255,255,0.3); color: #fff; width: 40px; height: 40px; border-radius: 50%; font-size: 20px; cursor: pointer; transition: all 0.2s; display: flex; align-items: center; justify-content: center; }
 .zoom-controls button:hover { background: rgba(255,255,255,0.3); transform: scale(1.1); }
-
 @media screen and (max-width: 768px) {
 .swiper-frame { --swiper-navigation-size: 42px; }
 .slide-text { bottom: 50px; left: 15px; right: 15px; padding: 12px 16px; }
@@ -367,9 +358,7 @@ background-size: 100% auto !important;
 background-attachment: scroll !important;
 background-position: top center !important;
 background-repeat: no-repeat !important;
--webkit-backface-visibility: hidden !important;
-backface-visibility: hidden !important;
-/* ✅ حذف transform برای رفع باگ position: fixed در موبایل */
+/* ❌ FIX: Removed transform: translateZ(0) !important; to fix fixed positioning */
 min-height: 5800px !important;
 }
 .swiper-frame {
@@ -391,12 +380,12 @@ min-height: 280px !important;
 }
 .slider-mobile-title {
 display: block !important;
-position: relative !important;
+position: relative !important; 
 top: auto !important;
-bottom: auto !important;
+bottom: auto !important; 
 left: auto !important;
 right: auto !important;
-margin: 0 0 20px 0 !important;
+margin: 0 0 20px 0 !important; 
 font-family: 'Unigeo64', sans-serif !important;
 font-size: 13px !important;
 font-weight: 800 !important;
@@ -422,7 +411,7 @@ min-height: 220px !important;
 .slider-mobile-title {
 font-size: 11px !important;
 bottom: auto !important;
-margin-bottom: 15px !important;
+margin-bottom: 15px !important; 
 letter-spacing: 0.5px !important;
 }
 .swiper-frame {
@@ -652,7 +641,8 @@ width: calc(100% - 24px) !important;
 <div class="video-modal" id="videoModal">
 <div class="modal-video-container">
 <button class="close-modal" id="closeModal">×</button>
-<video id="modalVideo" controls playsinline muted></video>
+<!-- ✅ FIX: Removed 'muted' attribute from HTML, handled dynamically in JS for better audio support -->
+<video id="modalVideo" controls playsinline></video>
 <div class="modal-title" id="modalTitle"></div>
 </div>
 </div>
@@ -796,29 +786,34 @@ translateX = 0;
 translateY = 0;
 updateTransform();
 modalImage.style.cursor = 'zoom-in';
-document.body.style.overflow = 'hidden'; // قفل کردن اسکرول قبل از نمایش
 imageModal.style.display = 'flex';
+// ✅ FIX: Robust Scroll Locking
+document.body.style.overflow = 'hidden';
+document.documentElement.style.overflow = 'hidden';
 setTimeout(() => { imageModal.classList.add('active'); }, 10);
 }
 } else {
 if (src) {
-modalVideo.muted = true;
 modalVideo.src = src;
 modalTitle.innerText = titleText || '';
-document.body.style.overflow = 'hidden'; // قفل کردن اسکرول قبل از نمایش
 videoModal.style.display = 'flex';
-setTimeout(() => {
-videoModal.classList.add('active');
-try { modalVideo.load(); } catch(e) {}
+// ✅ FIX: Robust Scroll Locking
+document.body.style.overflow = 'hidden';
+document.documentElement.style.overflow = 'hidden';
+
+// ✅ FIX: Moved play() outside setTimeout to keep user gesture context for unmuted autoplay
+modalVideo.muted = false; 
 const playPromise = modalVideo.play();
 if (playPromise !== undefined) {
-playPromise.catch(err => {
-console.log("پخش خودکار مسدود شد:", err);
-setTimeout(() => {
-modalVideo.play().catch(() => {});
-}, 150);
-});
+    playPromise.catch(err => {
+        console.log("پخش با صدا مسدود شد، تلاش برای پخش بی‌صدا:", err);
+        modalVideo.muted = true;
+        modalVideo.play().catch(() => {});
+    });
 }
+
+setTimeout(() => {
+    videoModal.classList.add('active');
 }, 10);
 }
 }
@@ -827,18 +822,23 @@ modalVideo.play().catch(() => {});
 function closeVideoModal() {
 videoModal.classList.remove('active');
 modalVideo.pause();
+// ✅ FIX: Restore Scroll
+document.body.style.overflow = '';
+document.documentElement.style.overflow = '';
 setTimeout(() => {
 modalVideo.removeAttribute('src');
 modalVideo.load();
 videoModal.style.display = 'none';
 modalTitle.innerText = "";
-document.body.style.overflow = ''; // آزاد کردن اسکرول
 }, 300);
 }
 closeModalBtn.addEventListener('click', closeVideoModal);
 videoModal.addEventListener('click', (e) => { if (e.target === videoModal) closeVideoModal(); });
 function closeImageModalFunc() {
 imageModal.classList.remove('active');
+// ✅ FIX: Restore Scroll
+document.body.style.overflow = '';
+document.documentElement.style.overflow = '';
 setTimeout(() => {
 modalImage.removeAttribute('src');
 imageModal.style.display = 'none';
@@ -848,7 +848,6 @@ translateX = 0;
 translateY = 0;
 updateTransform();
 modalImage.style.cursor = 'zoom-in';
-document.body.style.overflow = ''; // آزاد کردن اسکرول
 }, 300);
 }
 closeImageModalBtn.addEventListener('click', closeImageModalFunc);
