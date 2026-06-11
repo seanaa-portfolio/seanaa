@@ -33,48 +33,28 @@ src: url('https://raw.githubusercontent.com/seanaasamavi/font/main/tarik-tarikBl
 font-weight: normal;
 font-display: swap;
 }
-html {
-line-height: 1.15;
--webkit-text-size-adjust: 100%;
-}
+html { line-height: 1.15; -webkit-text-size-adjust: 100%; }
 body {
-margin: 0;
-padding: 0;
-font-family: sina;
-direction: rtl;
-font-size: 11pt;
-color: #111;
-line-height: 1.8;
-background-color: #f3f4f6;
-position: relative;
+margin: 0; padding: 0; font-family: sina; direction: rtl; font-size: 11pt; color: #111; line-height: 1.8;
+background-color: #f3f4f6; position: relative;
 background-image: url('https://uploadkon.ir/uploads/d81010_26site-nahai-6.png'), linear-gradient(to bottom right, #caf4ff, #73e1fd);
-background-size: 100% auto;
-background-attachment: scroll;
-background-position: top center;
-background-repeat: no-repeat;
--webkit-backface-visibility: hidden;
-backface-visibility: hidden;
--webkit-transform: translateZ(0);
-transform: translateZ(0);
+background-size: 100% auto; background-attachment: scroll; background-position: top center; background-repeat: no-repeat;
+-webkit-backface-visibility: hidden; backface-visibility: hidden; -webkit-transform: translateZ(0); transform: translateZ(0);
 min-height: 5800px;
 }
-html, body {
-max-width: 100%;
-overflow-x: hidden;
-overflow-y: auto;
-}
+html, body { max-width: 100%; overflow-x: hidden; overflow-y: auto; }
 details, main { display: block; }
 h1 { font-size: 2em; margin: .67em 0; }
 hr { box-sizing: content-box; height: 0; overflow: visible; }
 code, kbd, pre, samp { font-family: sina; font-size: 1em; }
-a { background-color: transparent; }
+a { background-color: transparent; color: #626b7f; text-decoration: none; }
+a:hover { color: #a3aab8; }
 abbr[title] { border-bottom: none; text-decoration: underline dotted; }
 b, strong { font-weight: bolder; }
 small { font-size: 80%; }
 sub, sup { font-size: 75%; line-height: 0; position: relative; vertical-align: baseline; }
-sub { bottom: -.25em; }
-sup { top: -.5em; }
-img { border-style: none; }
+sub { bottom: -.25em; } sup { top: -.5em; }
+img { border-style: none; max-width: 100%; height: auto; display: block; }
 button, input, optgroup, select, textarea { font-family: sina; font-size: 100%; line-height: 1.15; margin: 0; }
 button, input { overflow: visible; }
 button, select { text-transform: none; }
@@ -82,10 +62,10 @@ button, select { text-transform: none; }
 [type=button]::-moz-focus-inner, [type=reset]::-moz-focus-inner, [type=submit]::-moz-focus-inner, button::-moz-focus-inner { border-style: none; padding: 0; }
 [type=button]:-moz-focusring, [type=reset]:-moz-focusring, [type=submit]:-moz-focusring, button:-moz-focusring { outline: 1px dotted ButtonText; }
 fieldset { padding: .35em .75em .625em; }
-legend { color: inherit; display: table; max-width: 100%; white-space: normal; }
+legend { color: inherit; display: table; max-width: 100%; white-space: normal; box-sizing: border-box; padding: 0; }
 progress { vertical-align: baseline; }
 textarea { overflow: auto; }
-[type=checkbox], [type=radio], legend { box-sizing: border-box; padding: 0; }
+[type=checkbox], [type=radio] { box-sizing: border-box; padding: 0; }
 [type=number]::-webkit-inner-spin-button, [type=number]::-webkit-outer-spin-button { height: auto; }
 [type=search] { appearance: textfield; -webkit-appearance: textfield; outline-offset: -2px; }
 [type=search]::-webkit-search-decoration { -webkit-appearance: none; }
@@ -93,40 +73,17 @@ textarea { overflow: auto; }
 summary { display: list-item; }
 [hidden], template { display: none; }
 * { box-sizing: border-box; }
-img { max-width: 100%; height: auto; display: block; }
 .wrap { width: 100%; max-width: 992px; padding-right: 15px; padding-left: 15px; margin-left: auto; margin-right: auto; }
-a { color: #626b7f; text-decoration: none; }
-a:hover { color: #a3aab8; }
-.header-placeholder {
-padding: 997px 15px;
-margin-bottom: 60px;
-background: transparent;
-border-radius: 30px;
-min-height: 270px;
-}
-.sticker-layer {
-position: absolute !important;
-height: auto;
-z-index: 4 !important;
-pointer-events: none !important;
-background: transparent !important;
-user-select: none;
--webkit-user-drag: none;
-object-fit: contain;
-}
+
+.header-placeholder { padding: 997px 15px; margin-bottom: 60px; background: transparent; border-radius: 30px; min-height: 270px; }
+.sticker-layer { position: absolute !important; height: auto; z-index: 4 !important; pointer-events: none !important; background: transparent !important; user-select: none; -webkit-user-drag: none; object-fit: contain; }
 .sticker-layer::-webkit-media-controls { display: none !important; }
 
 /* ========================================== */
 /* ✅ استایل‌های اسلایدرها و فاصله‌گذاری */
 /* ========================================== */
-.slider-section {
-position: relative;
-overflow: visible !important;
-margin-bottom: 396px;
-}
-.slider-section:last-of-type {
-margin-bottom: 10px;
-}
+.slider-section { position: relative; overflow: visible !important; margin-bottom: 396px; }
+.slider-section:last-of-type { margin-bottom: 10px; }
 @media screen and (max-width: 768px) {
 .slider-section { margin-bottom: 150px; }
 .slider-section:last-of-type { margin-bottom: 10px; }
@@ -135,162 +92,37 @@ margin-bottom: 10px;
 /* ========================================== */
 /* ✅ آیکون "click here" */
 /* ========================================== */
-.slider-click-hint {
-position: absolute;
-left: 195px;
-top: 54%;
-transform: translateY(-50%);
-display: flex;
-flex-direction: column;
-align-items: center;
-gap: 5px;
-cursor: pointer;
-z-index: 100;
-text-decoration: none !important;
-transition: all 0.3s ease;
-pointer-events: none !important;
-}
-.slider-click-hint:hover {
-transform: translateY(-50%) scale(1.1);
-}
-.slider-click-hint .hint-arrow {
-font-size: 30px;
-color: #cdd4d9;
-animation: bounceRight 1.5s infinite;
-line-height: 1;
-filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));
-}
-.slider-click-hint .hint-text {
-font-family: 'Unigeo64', sina;
-font-size: 20px;
-color: #cdd4d9;
-letter-spacing: 2px;
-white-space: nowrap;
-text-transform: uppercase;
-font-weight: bold;
-filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));
-}
-@keyframes bounceRight {
-0%, 100% { transform: translateX(0); }
-50% { transform: translateX(8px); }
-}
-@media screen and (max-width: 1100px) {
-.slider-click-hint { left: -95px; }
-.slider-click-hint .hint-text { font-size: 12px; }
-.slider-click-hint .hint-arrow { font-size: 28px; }
-}
-@media screen and (max-width: 900px) {
-.slider-click-hint { display: none; }
-}
+.slider-click-hint { position: absolute; left: 195px; top: 54%; transform: translateY(-50%); display: flex; flex-direction: column; align-items: center; gap: 5px; cursor: pointer; z-index: 100; text-decoration: none !important; transition: all 0.3s ease; pointer-events: none !important; }
+.slider-click-hint:hover { transform: translateY(-50%) scale(1.1); }
+.slider-click-hint .hint-arrow { font-size: 30px; color: #cdd4d9; animation: bounceRight 1.5s infinite; line-height: 1; filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3)); }
+.slider-click-hint .hint-text { font-family: 'Unigeo64', sina; font-size: 20px; color: #cdd4d9; letter-spacing: 2px; white-space: nowrap; text-transform: uppercase; font-weight: bold; filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3)); }
+@keyframes bounceRight { 0%, 100% { transform: translateX(0); } 50% { transform: translateX(8px); } }
+@media screen and (max-width: 1100px) { .slider-click-hint { left: -95px; } .slider-click-hint .hint-text { font-size: 12px; } .slider-click-hint .hint-arrow { font-size: 28px; } }
+@media screen and (max-width: 900px) { .slider-click-hint { display: none; } }
 
 /* ========================================== */
 /* ✅ اطلاعات تماس */
 /* ========================================== */
-.contact-footer {
-text-align: center;
-padding: 20px 20px 30px;
-margin-top: -380px;
-margin-bottom: 40px;
-font-family: 'Tarik', sans-serif;
-color: #cdd4d9;
-position: relative;
-z-index: 10;
-}
-.contact-footer .contact-label {
-font-family: 'Unigeo64', sans-serif;
-font-size: 14px;
-letter-spacing: 4px;
-text-transform: uppercase;
-opacity: 0.6;
-margin-bottom: 20px;
-color: #cdd4d9;
-}
-.contact-footer .contact-row {
-display: flex;
-justify-content: center;
-align-items: center;
-gap: 20px;
-flex-wrap: wrap;
-}
-.contact-footer a {
-color: #cdd4d9;
-text-decoration: none;
-transition: all 0.3s ease;
-padding: 12px 26px;
-border: 1.5px solid rgba(205, 212, 217, 0.35);
-border-radius: 12px;
-font-family: 'Tarik', sans-serif;
-display: inline-flex;
-align-items: center;
-gap: 12px;
-font-size: 16px;
-background: rgba(205, 212, 217, 0.03);
-backdrop-filter: blur(4px);
-}
-.contact-footer a:hover {
-background: rgba(205, 212, 217, 0.12);
-border-color: rgba(205, 212, 217, 0.6);
-transform: translateY(-3px);
-box-shadow: 0 6px 15px rgba(0,0,0,0.15);
-}
-.contact-footer a svg {
-width: 20px;
-height: 20px;
-stroke: #cdd4d9;
-fill: none;
-stroke-width: 2;
-stroke-linecap: round;
-stroke-linejoin: round;
-flex-shrink: 0;
-}
-.contact-footer .separator {
-color: rgba(205, 212, 217, 0.3);
-font-size: 20px;
-font-weight: 300;
-}
+.contact-footer { text-align: center; padding: 20px 20px 30px; margin-top: -380px; margin-bottom: 40px; font-family: 'Tarik', sans-serif; color: #cdd4d9; position: relative; z-index: 10; }
+.contact-footer .contact-label { font-family: 'Unigeo64', sans-serif; font-size: 14px; letter-spacing: 4px; text-transform: uppercase; opacity: 0.6; margin-bottom: 20px; color: #cdd4d9; }
+.contact-footer .contact-row { display: flex; justify-content: center; align-items: center; gap: 20px; flex-wrap: wrap; }
+.contact-footer a { color: #cdd4d9; text-decoration: none; transition: all 0.3s ease; padding: 12px 26px; border: 1.5px solid rgba(205, 212, 217, 0.35); border-radius: 12px; font-family: 'Tarik', sans-serif; display: inline-flex; align-items: center; gap: 12px; font-size: 16px; background: rgba(205, 212, 217, 0.03); backdrop-filter: blur(4px); }
+.contact-footer a:hover { background: rgba(205, 212, 217, 0.12); border-color: rgba(205, 212, 217, 0.6); transform: translateY(-3px); box-shadow: 0 6px 15px rgba(0,0,0,0.15); }
+.contact-footer a svg { width: 20px; height: 20px; stroke: #cdd4d9; fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; flex-shrink: 0; }
+.contact-footer .separator { color: rgba(205, 212, 217, 0.3); font-size: 20px; font-weight: 300; }
 @media screen and (max-width: 600px) {
-.contact-footer {
-margin-top: -150px;
-padding: 15px 10px 25px;
-}
-.contact-footer .contact-row {
-flex-direction: column;
-gap: 14px;
-}
-.contact-footer .separator {
-display: none;
-}
-.contact-footer a {
-font-size: 15px;
-padding: 10px 20px;
-width: 100%;
-max-width: 300px;
-justify-content: center;
-}
-.contact-footer a svg {
-width: 18px;
-height: 18px;
-}
+.contact-footer { margin-top: -150px; padding: 15px 10px 25px; }
+.contact-footer .contact-row { flex-direction: column; gap: 14px; }
+.contact-footer .separator { display: none; }
+.contact-footer a { font-size: 15px; padding: 10px 20px; width: 100%; max-width: 300px; justify-content: center; }
+.contact-footer a svg { width: 18px; height: 18px; }
 }
 
 /* ========================================== */
-/* ✅ استایل‌های اسلایدر و مودال (اصلاح شده برای مرکز چینش کامل) */
+/* ✅ استایل‌های اسلایدر و مودال (اصلاح شده) */
 /* ========================================== */
 :root { --slider-height: 540px; }
-.swiper-frame {
-position: relative;
-width: 100%;
-max-width: 960px;
-height: var(--slider-height);
-aspect-ratio: 16 / 9;
-margin: 0 auto;
-border-radius: 20px;
-overflow: hidden;
-box-shadow: 0 10px 30px rgba(0,0,0,0.25);
-background: #000;
---swiper-navigation-size: 50px;
---swiper-navigation-color: #fff;
-}
+.swiper-frame { position: relative; width: 100%; max-width: 960px; height: var(--slider-height); aspect-ratio: 16 / 9; margin: 0 auto; border-radius: 20px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.25); background: #000; --swiper-navigation-size: 50px; --swiper-navigation-color: #fff; }
 .blogix-swiper { width: 100%; height: 100%; direction: ltr !important; border-radius: 20px; overflow: hidden; }
 .swiper-wrapper { direction: ltr !important; }
 .swiper-slide { width: 100% !important; height: 100% !important; position: relative; overflow: hidden; cursor: pointer; background-color: #111; }
@@ -311,11 +143,11 @@ background: #000;
 .swiper-pagination-bullet { width: 8px !important; height: 8px !important; background: rgba(255,255,255,0.5) !important; opacity: 1 !important; margin: 0 6px !important; transition: all 0.3s ease !important; }
 .swiper-pagination-bullet-active { width: 24px !important; background: #ffffff !important; border-radius: 999px !important; }
 
-/* ✅ اصلاح اساسی مودال‌ها برای رفع باگ اسکرول و موقعیت تصادفی */
+/* ✅ استایل مودال‌ها با 100dvh برای فیکس شدن کامل در مرکز گوشی و لپتاپ */
 .video-modal, .image-modal {
     display: none;
     position: fixed;
-    inset: 0; /* معادل top:0; right:0; bottom:0; left:0; برای پوشش کامل */
+    inset: 0; /* جایگزین top/left/right/bottom: 0 برای پوشش کامل */
     width: 100%;
     height: 100dvh; /* ارتفاع داینامیک برای رفع باگ نوار آدرس موبایل */
     background: rgba(0, 0, 0, 0.95);
@@ -327,7 +159,7 @@ background: #000;
     transition: opacity 0.3s ease, visibility 0.3s ease;
     backdrop-filter: blur(8px);
     -webkit-backdrop-filter: blur(8px);
-    overflow: hidden; /* جلوگیری از اسکرول داخل خود مودال */
+    overflow: hidden;
 }
 .video-modal.active, .image-modal.active {
     display: flex;
@@ -335,68 +167,14 @@ background: #000;
     visibility: visible;
 }
 
-.modal-video-container { 
-    position: relative; 
-    width: 90vw; 
-    max-width: 1100px; 
-    display: flex; 
-    flex-direction: column; 
-    align-items: center; 
-}
-.modal-video-container video { 
-    width: 100%; 
-    max-height: 80dvh; 
-    border-radius: 12px; 
-    box-shadow: 0 15px 40px rgba(0,0,0,0.6); 
-    outline: none; 
-    background: #000; 
-    object-fit: contain; /* جلوگیری از کشیده شدن تصویر */
-}
-.close-modal { 
-    position: absolute; 
-    top: -45px; 
-    right: 0; 
-    color: #fff; 
-    font-size: 32px; 
-    font-weight: bold; 
-    cursor: pointer; 
-    background: rgba(255,255,255,0.1); 
-    border: none; 
-    width: 40px; 
-    height: 40px; 
-    border-radius: 50%; 
-    display: flex; 
-    align-items: center; 
-    justify-content: center; 
-    transition: background 0.2s; 
-    z-index: 10;
-}
+.modal-video-container { position: relative; width: 90vw; max-width: 1100px; display: flex; flex-direction: column; align-items: center; }
+.modal-video-container video { width: 100%; max-height: 80dvh; border-radius: 12px; box-shadow: 0 15px 40px rgba(0,0,0,0.6); outline: none; background: #000; object-fit: contain; }
+.close-modal { position: absolute; top: -45px; right: 0; color: #fff; font-size: 32px; font-weight: bold; cursor: pointer; background: rgba(255,255,255,0.1); border: none; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; transition: background 0.2s; z-index: 10; }
 .close-modal:hover { background: rgba(255,255,255,0.3); }
 .modal-title { color: #fff; font-family: 'Tarik', sans-serif; margin-top: 15px; font-size: 18px; text-align: center; direction: rtl; }
 
-.modal-image-container { 
-    position: relative; 
-    width: 90vw; 
-    max-width: 1100px; 
-    display: flex; 
-    flex-direction: column; 
-    align-items: center; 
-}
-.modal-image-container img { 
-    max-width: 90vw; 
-    max-height: 80dvh; 
-    border-radius: 12px; 
-    box-shadow: 0 15px 40px rgba(0,0,0,0.6); 
-    outline: none; 
-    background: #000; 
-    transition: transform 0.3s ease; 
-    transform-origin: center center; 
-    cursor: zoom-in; 
-    user-select: none; 
-    touch-action: none; 
-    -webkit-user-drag: none; 
-    object-fit: contain;
-}
+.modal-image-container { position: relative; width: 90vw; max-width: 1100px; display: flex; flex-direction: column; align-items: center; }
+.modal-image-container img { max-width: 90vw; max-height: 80dvh; border-radius: 12px; box-shadow: 0 15px 40px rgba(0,0,0,0.6); outline: none; background: #000; transition: transform 0.3s ease; transform-origin: center center; cursor: zoom-in; user-select: none; touch-action: none; -webkit-user-drag: none; object-fit: contain; }
 .zoom-controls { position: absolute; bottom: -50px; display: flex; gap: 15px; z-index: 10; }
 .zoom-controls button { background: rgba(255,255,255,0.15); border: 1px solid rgba(255,255,255,0.3); color: #fff; width: 40px; height: 40px; border-radius: 50%; font-size: 20px; cursor: pointer; transition: all 0.2s; display: flex; align-items: center; justify-content: center; }
 .zoom-controls button:hover { background: rgba(255,255,255,0.3); transform: scale(1.1); }
@@ -411,7 +189,6 @@ background: #000;
 .swiper-pagination-bullet { width: 7px !important; height: 7px !important; margin: 0 5px !important; }
 .swiper-pagination-bullet-active { width: 20px !important; }
 
-/* ✅ تنظیمات موبایل */
 body {
 background-image: url('https://uploadkon.ir/uploads/7f2d10_26site-akharin.png'), linear-gradient(to bottom right, #caf4ff, #73e1fd) !important;
 background-size: 100% auto !important;
@@ -422,36 +199,14 @@ background-repeat: no-repeat !important;
 transform: translateZ(0) !important;
 min-height: 5800px !important;
 }
-.swiper-frame {
-width: calc(100% - 40px) !important;
-max-width: 100% !important;
-height: auto !important;
-aspect-ratio: 16 / 9 !important;
-margin: 0 auto !important;
-border-radius: 16px !important;
-}
+.swiper-frame { width: calc(100% - 40px) !important; max-width: 100% !important; height: auto !important; aspect-ratio: 16 / 9 !important; margin: 0 auto !important; border-radius: 16px !important; }
 .sticker-layer { display: none !important; visibility: hidden !important; }
 .header-placeholder { padding: 320px 15px !important; margin-bottom: 40px !important; min-height: 280px !important; }
 .slider-mobile-title {
-display: block !important;
-position: relative !important;
-top: auto !important;
-bottom: auto !important;
-left: auto !important;
-right: auto !important;
-margin: 0 0 20px 0 !important;
-font-family: 'Unigeo64', sans-serif !important;
-font-size: 13px !important;
-font-weight: 800 !important;
-color: #ffffff !important;
-text-transform: uppercase !important;
-text-align: center !important;
-padding: 0 15px !important;
-letter-spacing: 1px !important;
-text-shadow: 0 2px 6px rgba(0,0,0,0.8) !important;
-z-index: 20 !important;
-pointer-events: none !important;
-line-height: 1.3 !important;
+display: block !important; position: relative !important; top: auto !important; bottom: auto !important; left: auto !important; right: auto !important;
+margin: 0 0 20px 0 !important; font-family: 'Unigeo64', sans-serif !important; font-size: 13px !important; font-weight: 800 !important;
+color: #ffffff !important; text-transform: uppercase !important; text-align: center !important; padding: 0 15px !important;
+letter-spacing: 1px !important; text-shadow: 0 2px 6px rgba(0,0,0,0.8) !important; z-index: 20 !important; pointer-events: none !important; line-height: 1.3 !important;
 }
 .slider-section { margin-bottom: 180px !important; }
 }
@@ -714,16 +469,55 @@ line-height: 1.3 !important;
 document.addEventListener('DOMContentLoaded', () => {
 const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
 
-// توقف ویدیوهای پس‌زمینه در دسکتاپ برای بهینه‌سازی
 if (!isTouchDevice) {
 document.querySelectorAll('.slide-media').forEach(media => {
-if (media.tagName === 'VIDEO') {
-media.pause();
-}
+if (media.tagName === 'VIDEO') media.pause();
 });
 }
 
-// راه‌اندازی اسلایدرها
+// متغیرهای مودال
+const videoModal = document.getElementById('videoModal');
+const modalVideo = document.getElementById('modalVideo');
+const modalTitle = document.getElementById('modalTitle');
+const closeModalBtn = document.getElementById('closeModal');
+
+const imageModal = document.getElementById('imageModal');
+const modalImage = document.getElementById('modalImage');
+const modalImageTitle = document.getElementById('modalImageTitle');
+const closeImageModalBtn = document.getElementById('closeImageModal');
+const zoomInBtn = document.getElementById('zoomIn');
+const zoomOutBtn = document.getElementById('zoomOut');
+const resetZoomBtn = document.getElementById('resetZoom');
+
+let currentZoom = 1;
+let isPanning = false;
+let startX = 0, startY = 0;
+let translateX = 0, translateY = 0;
+
+function updateTransform() {
+modalImage.style.transform = `translate(${translateX}px, ${translateY}px) scale(${currentZoom})`;
+}
+
+// ✅ توابع قفل و آزادسازی اسکرول (سازگار با iOS و اندروید)
+function lockBodyScroll() {
+const scrollY = window.scrollY;
+document.body.style.position = 'fixed';
+document.body.style.top = `-${scrollY}px`;
+document.body.style.width = '100%';
+document.body.style.overflow = 'hidden';
+}
+
+function unlockBodyScroll() {
+const scrollY = document.body.style.top;
+document.body.style.position = '';
+document.body.style.top = '';
+document.body.style.width = '';
+document.body.style.overflow = '';
+if (scrollY) {
+window.scrollTo(0, parseInt(scrollY || '0') * -1);
+}
+}
+
 document.querySelectorAll('.swiper-frame').forEach((frame) => {
 const swiperContainer = frame.querySelector('.blogix-swiper');
 const nextEl = frame.querySelector('.swiper-button-next');
@@ -748,10 +542,59 @@ bulletActiveClass: 'swiper-pagination-bullet-active'
 },
 observer: true,
 observeParents: true,
+// ✅ این دو خط جلوی تداخل کلیک و جابجایی اسلاید را می‌گیرند
+preventClicks: true,
+preventClicksPropagation: true,
 on: {
 init: function() { playActiveMedia(this, frame); },
 slideChangeTransitionStart: function() { pauseAllMedia(frame); },
-slideChangeTransitionEnd: function() { playActiveMedia(this, frame); }
+slideChangeTransitionEnd: function() { playActiveMedia(this, frame); },
+// ✅ استفاده از رویداد داخلی Swiper برای باز کردن مودال با یک کلیک
+click: function(swiper, event) {
+if (event.target.closest('.swiper-button-prev') || event.target.closest('.swiper-button-next') || event.target.closest('.swiper-pagination')) {
+return;
+}
+const slide = event.target.closest('.swiper-slide');
+if (!slide) return;
+
+// جلوگیری از هرگونه رفتار پیش‌فرض که باعث شیفت شود
+event.preventDefault();
+event.stopPropagation();
+
+const src = slide.getAttribute('data-src');
+const titleText = slide.getAttribute('data-title');
+if (!src) return;
+
+if (frame.classList.contains('image-slider')) {
+modalImage.src = src;
+modalImageTitle.innerText = titleText || '';
+currentZoom = 1;
+translateX = 0;
+translateY = 0;
+updateTransform();
+modalImage.style.cursor = 'zoom-in';
+imageModal.style.display = 'flex';
+lockBodyScroll();
+setTimeout(() => { imageModal.classList.add('active'); }, 10);
+} else {
+modalVideo.muted = true;
+modalVideo.src = src;
+modalTitle.innerText = titleText || '';
+videoModal.style.display = 'flex';
+lockBodyScroll();
+setTimeout(() => {
+videoModal.classList.add('active');
+try { modalVideo.load(); } catch(e) {}
+const playPromise = modalVideo.play();
+if (playPromise !== undefined) {
+playPromise.catch(err => {
+console.log("پخش خودکار مسدود شد:", err);
+setTimeout(() => { modalVideo.play().catch(() => {}); }, 150);
+});
+}
+}, 10);
+}
+}
 }
 });
 
@@ -807,104 +650,6 @@ media.pause();
 }
 });
 
-// متغیرهای مودال
-const videoModal = document.getElementById('videoModal');
-const modalVideo = document.getElementById('modalVideo');
-const modalTitle = document.getElementById('modalTitle');
-const closeModalBtn = document.getElementById('closeModal');
-
-const imageModal = document.getElementById('imageModal');
-const modalImage = document.getElementById('modalImage');
-const modalImageTitle = document.getElementById('modalImageTitle');
-const closeImageModalBtn = document.getElementById('closeImageModal');
-const zoomInBtn = document.getElementById('zoomIn');
-const zoomOutBtn = document.getElementById('zoomOut');
-const resetZoomBtn = document.getElementById('resetZoom');
-
-let currentZoom = 1;
-let isPanning = false;
-let startX = 0, startY = 0;
-let translateX = 0, translateY = 0;
-
-function updateTransform() {
-modalImage.style.transform = `translate(${translateX}px, ${translateY}px) scale(${currentZoom})`;
-}
-
-// ✅ مدیریت کلیک روی اسلایدها (یک مرحله‌ای و بدون باگ)
-document.querySelectorAll('.swiper-frame').forEach(frame => {
-frame.addEventListener('click', (e) => {
-// جلوگیری از تداخل با دکمه‌های ناوبری
-if (e.target.closest('.swiper-button-prev') || e.target.closest('.swiper-button-next') || e.target.closest('.swiper-pagination')) {
-return;
-}
-
-// پیدا کردن اسلاید حتی اگر کاربر مستقیماً روی ویدیو یا عکس کلیک کند
-const slide = e.target.closest('.swiper-slide');
-if (!slide) return;
-
-// جلوگیری از رفتارهای پیش‌فرض لمسی که ممکن است باعث اسکرول یا انتخاب متن شود
-e.preventDefault();
-
-const src = slide.getAttribute('data-src');
-const titleText = slide.getAttribute('data-title');
-
-if (frame.classList.contains('image-slider')) {
-if (src) {
-modalImage.src = src;
-modalImageTitle.innerText = titleText || '';
-currentZoom = 1;
-translateX = 0;
-translateY = 0;
-updateTransform();
-modalImage.style.cursor = 'zoom-in';
-imageModal.style.display = 'flex';
-lockBodyScroll();
-setTimeout(() => { imageModal.classList.add('active'); }, 10);
-}
-} else {
-if (src) {
-modalVideo.muted = true;
-modalVideo.src = src;
-modalTitle.innerText = titleText || '';
-videoModal.style.display = 'flex';
-lockBodyScroll();
-setTimeout(() => {
-videoModal.classList.add('active');
-try { modalVideo.load(); } catch(e) {}
-const playPromise = modalVideo.play();
-if (playPromise !== undefined) {
-playPromise.catch(err => {
-console.log("پخش خودکار مسدود شد:", err);
-setTimeout(() => { modalVideo.play().catch(() => {}); }, 150);
-});
-}
-}, 10);
-}
-}
-});
-});
-
-// ✅ تابع قفل کردن اسکرول بدن صفحه (سازگار با iOS و اندروید)
-function lockBodyScroll() {
-const scrollY = window.scrollY;
-document.body.style.position = 'fixed';
-document.body.style.top = `-${scrollY}px`;
-document.body.style.width = '100%';
-document.body.style.overflow = 'hidden';
-}
-
-// ✅ تابع آزاد کردن اسکرول بدن صفحه
-function unlockBodyScroll() {
-const scrollY = document.body.style.top;
-document.body.style.position = '';
-document.body.style.top = '';
-document.body.style.width = '';
-document.body.style.overflow = '';
-if (scrollY) {
-window.scrollTo(0, parseInt(scrollY || '0') * -1);
-}
-}
-
 function closeVideoModal() {
 videoModal.classList.remove('active');
 modalVideo.pause();
@@ -938,7 +683,7 @@ modalImage.style.cursor = 'zoom-in';
 closeImageModalBtn.addEventListener('click', closeImageModalFunc);
 imageModal.addEventListener('click', (e) => { if (e.target === imageModal) closeImageModalFunc(); });
 
-// منطق زوم و جابجایی تصویر (بدون تغییر)
+// منطق زوم و جابجایی تصویر
 modalImage.addEventListener('mousedown', (e) => {
 if (currentZoom > 1) {
 isPanning = true;
