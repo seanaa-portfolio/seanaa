@@ -347,10 +347,6 @@ background: #000;
 .swiper-pagination-bullet { width: 7px !important; height: 7px !important; margin: 0 5px !important; }
 .swiper-pagination-bullet-active { width: 20px !important; }
 }
-/* ========================================== */
-/* ✅ تغییرات اختصاصی موبایل (اندروید و iOS) */
-/* ========================================== */
-.slider-mobile-title { display: none; }
 @media screen and (max-width: 768px) {
 body {
 background-image: url('https://uploadkon.ir/uploads/7f2d10_26site-akharin.png'), linear-gradient(to bottom right, #caf4ff, #73e1fd) !important;
@@ -358,8 +354,10 @@ background-size: 100% auto !important;
 background-attachment: scroll !important;
 background-position: top center !important;
 background-repeat: no-repeat !important;
-/* ❌ FIX: Removed transform: translateZ(0) !important; to fix fixed positioning */
-min-height: 5800px !important;
+-webkit-transform: translateZ(0) !important;
+transform: translateZ(0) !important;
+min-height: 5800px !important; /* ❌ CAUSES EXCESSIVE SPACE ON MOBILE */
+}
 }
 .swiper-frame {
 width: calc(100% - 40px) !important;
