@@ -48,18 +48,14 @@ line-height: 1.8;
 background-color: #f3f4f6;
 position: relative;
 background-image: url('https://uploadkon.ir/uploads/d81010_26site-nahai-6.png'), linear-gradient(to bottom right, #caf4ff, #73e1fd);
-/* ✅ تغییر ۱: بازگشت به 100% auto برای حفظ نسبت ابعاد اصلی تصویر (بدون فشرده‌سازی) */
 background-size: 100% auto;
 background-attachment: scroll;
 background-position: top center;
 background-repeat: no-repeat;
-/* ✅ تغییر ۲: جلوگیری از باگ جدا شدن لایه‌ها در مرورگر (Tearing) */
 -webkit-backface-visibility: hidden;
 backface-visibility: hidden;
 -webkit-transform: translateZ(0);
 transform: translateZ(0);
-/* ✅ تغییر ۳ (کلیدی): چون پایین‌ترین استیکر شما در top: 5200px است، ارتفاع صفحه باید حداقل این مقدار باشد.
-این کار باعث می‌شود مرورگر استیکر و بک‌گراند را در یک جریان اسکرول واحد نگه دارد و آنها را جدا نکند. */
 min-height: 5800px;
 }
 html, body {
@@ -111,7 +107,6 @@ min-height: 270px;
 .sticker-layer {
 position: absolute !important;
 height: auto;
-/* ✅ تغییر ۴: کاهش z-index برای جلوگیری از ایجاد لایه گرافیکی جداگانه که باعث باگ اسکرول می‌شود */
 z-index: 4 !important;
 pointer-events: none !important;
 background: transparent !important;
@@ -342,12 +337,10 @@ background: #000;
 @media screen and (max-width: 768px) {
 body {
 background-image: url('https://uploadkon.ir/uploads/7f2d10_26site-akharin.png'), linear-gradient(to bottom right, #caf4ff, #73e1fd) !important;
-/* ✅ در موبایل هم از فشرده شدن تصویر جلوگیری می‌کنیم */
 background-size: 100% auto !important;
 background-attachment: scroll !important;
 background-position: top center !important;
 background-repeat: no-repeat !important;
-/* حفظ یکپارچگی لایه در موبایل */
 -webkit-transform: translateZ(0) !important;
 transform: translateZ(0) !important;
 min-height: 5800px !important;
@@ -369,19 +362,21 @@ padding: 320px 15px !important;
 margin-bottom: 40px !important;
 min-height: 280px !important;
 }
+/* ✅ تغییر کلیدی: انتقال تایتل به بالای اسلایدر با فاصله مناسب */
 .slider-mobile-title {
 display: block !important;
-position: absolute !important;
-top: 60px !important; /* ✅ تغییر: انتقال به بالای اسلایدر با فاصله گرافیکی مناسب */
-left: 0 !important;
-right: 0 !important;
+position: relative !important; /* تغییر از absolute به relative */
+top: auto !important;
+bottom: auto !important; /* حذف موقعیت پایین */
+left: auto !important;
+right: auto !important;
+margin: 0 0 20px 0 !important; /* ✅ فاصله ۲۰ پیکسلی زیبا از پایین (بالای اسلایدر) */
 font-family: 'Unigeo64', sans-serif !important;
 font-size: 13px !important;
 font-weight: 800 !important;
 color: #ffffff !important;
 text-transform: uppercase !important;
 text-align: center !important;
-margin: 0 !important;
 padding: 0 15px !important;
 letter-spacing: 1px !important;
 text-shadow: 0 2px 6px rgba(0,0,0,0.8) !important;
@@ -398,9 +393,11 @@ margin-bottom: 180px !important;
 padding: 260px 10px !important;
 min-height: 220px !important;
 }
+/* ✅ تغییر کلیدی: تنظیم فاصله برای صفحات موبایل خیلی کوچک */
 .slider-mobile-title {
 font-size: 11px !important;
-top: 20px !important; /* ✅ تغییر: تنظیم فاصله از بالا در صفحات خیلی کوچک موبایل */
+bottom: auto !important;
+margin-bottom: 15px !important; /* ✅ فاصله ۱۵ پیکسلی برای صفحات کوچک‌تر */
 letter-spacing: 0.5px !important;
 }
 .swiper-frame {
@@ -419,14 +416,16 @@ width: calc(100% - 24px) !important;
 <div class="wrap">
 <div class="header-placeholder"></div>
 </div>
+
 <!-- ✅ اسلایدر اول با آیکون click here -->
 <div class="slider-section" id="first-slider">
 <a href="#first-slider" class="slider-click-hint">
 <span class="hint-arrow">→</span>
 <span class="hint-text">click here</span>
 </a>
-<div class="swiper-frame">
+<!-- ✅ تغییر: تایتل به بیرون از swiper-frame و بالای آن منتقل شد -->
 <div class="slider-mobile-title">MOTION GRAPHICS SAMPLE</div>
+<div class="swiper-frame">
 <div class="swiper-button-prev"></div>
 <div class="swiper-button-next"></div>
 <div class="swiper blogix-swiper">
@@ -480,10 +479,12 @@ width: calc(100% - 24px) !important;
 </div>
 </div>
 </div>
+
 <!-- ✅ اسلایدر دوم -->
 <div class="slider-section">
-<div class="swiper-frame">
+<!-- ✅ تغییر: تایتل به بیرون از swiper-frame و بالای آن منتقل شد -->
 <div class="slider-mobile-title">ANIMATION SAMPLE</div>
+<div class="swiper-frame">
 <div class="swiper-button-prev"></div>
 <div class="swiper-button-next"></div>
 <div class="swiper blogix-swiper">
@@ -517,10 +518,12 @@ width: calc(100% - 24px) !important;
 </div>
 </div>
 </div>
+
 <!-- ✅ اسلایدر سوم -->
 <div class="slider-section">
-<div class="swiper-frame image-slider">
+<!-- ✅ تغییر: تایتل به بیرون از swiper-frame و بالای آن منتقل شد -->
 <div class="slider-mobile-title">SELF & UNIVERSITY PROJECT</div>
+<div class="swiper-frame image-slider">
 <div class="swiper-button-prev"></div>
 <div class="swiper-button-next"></div>
 <div class="swiper blogix-swiper">
@@ -578,10 +581,12 @@ width: calc(100% - 24px) !important;
 </div>
 </div>
 </div>
+
 <!-- ✅ اسلایدر چهارم -->
 <div class="slider-section">
-<div class="swiper-frame image-slider">
+<!-- ✅ تغییر: تایتل به بیرون از swiper-frame و بالای آن منتقل شد -->
 <div class="slider-mobile-title">LICENSE & CERTIFICATES</div>
+<div class="swiper-frame image-slider">
 <div class="swiper-button-prev"></div>
 <div class="swiper-button-next"></div>
 <div class="swiper blogix-swiper">
@@ -611,6 +616,7 @@ width: calc(100% - 24px) !important;
 </div>
 </div>
 </div>
+
 <!-- ✅ اطلاعات تماس -->
 <div class="contact-footer">
 <div class="contact-label">Get in Touch</div>
@@ -626,6 +632,7 @@ width: calc(100% - 24px) !important;
 </a>
 </div>
 </div>
+
 <!-- ✅ مودال ویدیو -->
 <div class="video-modal" id="videoModal">
 <div class="modal-video-container">
@@ -634,6 +641,7 @@ width: calc(100% - 24px) !important;
 <div class="modal-title" id="modalTitle"></div>
 </div>
 </div>
+
 <!-- ✅ مودال تصویر -->
 <div class="image-modal" id="imageModal">
 <div class="modal-image-container">
@@ -647,6 +655,7 @@ width: calc(100% - 24px) !important;
 </div>
 </div>
 </div>
+
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 <script>
 document.addEventListener('DOMContentLoaded', () => {
