@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
 <title>نمونه کارها و رزومه</title>
 <style>
-/* فونت sina برای حروف فارسی - وزن معمولی */
+/* فونت‌ها */
 @font-face {
 font-family: sina;
 src: url('https://raw.githubusercontent.com/seanaasamavi/font/main/tarik-tarikBlack.woff') format('woff');
@@ -37,7 +37,6 @@ font-display: swap;
 html { 
     line-height: 1.15; 
     -webkit-text-size-adjust: 100%; 
-    min-height: 100%; /* ✅ اطمینان از پوشش کامل ارتفاع */
 }
 
 body {
@@ -49,18 +48,30 @@ body {
     color: #111;
     line-height: 1.8;
     background-color: #f3f4f6;
-    position: relative; /* ✅ مهار استیکرهای absolute نسبت به بدنه */
+    position: relative;
     background-image: url('https://uploadkon.ir/uploads/d81010_26site-nahai-6.png'), linear-gradient(to bottom right, #caf4ff, #73e1fd);
-    background-size: 100% 100%; /* ✅ تغییر کلیدی: کشیدن بک‌گراند به اندازه کل ارتفاع سند */
+    
+    /* ✅ تغییر ۱: بازگشت به 100% auto برای حفظ نسبت ابعاد اصلی تصویر (بدون فشرده‌سازی) */
+    background-size: 100% auto; 
     background-attachment: scroll;
     background-position: top center;
     background-repeat: no-repeat;
     
-    /* ✅ تغییرات کلیدی برای ادغام لایه‌ها و جلوگیری از باگ اسکرول جداگانه */
+    /* ✅ تغییر ۲: جلوگیری از باگ جدا شدن لایه‌ها در مرورگر (Tearing) */
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
     -webkit-transform: translateZ(0);
     transform: translateZ(0);
+    
+    /* ✅ تغییر ۳ (کلیدی): چون پایین‌ترین استیکر شما در top: 5200px است، ارتفاع صفحه باید حداقل این مقدار باشد. 
+       این کار باعث می‌شود مرورگر استیکر و بک‌گراند را در یک جریان اسکرول واحد نگه دارد و آنها را جدا نکند. */
+    min-height: 5800px; 
+}
+
+html, body { 
+    max-width: 100%; 
+    overflow-x: hidden; 
+    overflow-y: auto;
 }
 
 details, main { display: block; }
@@ -106,19 +117,16 @@ a:hover { color: #a3aab8; }
     min-height: 270px;
 }
 
-html, body { max-width: 100%; overflow-x: hidden; }
-
 .sticker-layer {
     position: absolute !important;
     height: auto;
-    z-index: 1 !important; /* ✅ کاهش z-index برای قرارگیری صحیح در لایه */
+    /* ✅ تغییر ۴: کاهش z-index برای جلوگیری از ایجاد لایه گرافیکی جداگانه که باعث باگ اسکرول می‌شود */
+    z-index: 1 !important; 
     pointer-events: none !important;
     background: transparent !important;
     user-select: none;
     -webkit-user-drag: none;
     object-fit: contain;
-    top: auto; /* ✅ اطمینان از پیروی از مختصات اینلاین */
-    left: auto;
 }
 .sticker-layer::-webkit-media-controls { display: none !important; }
 
@@ -353,10 +361,16 @@ html, body { max-width: 100%; overflow-x: hidden; }
 @media screen and (max-width: 768px) {
     body {
         background-image: url('https://uploadkon.ir/uploads/7f2d10_26site-akharin.png'), linear-gradient(to bottom right, #caf4ff, #73e1fd) !important;
-        background-size: 100% 100% !important; /* ✅ تغییر کلیدی در موبایل برای پوشش کامل */
+        /* ✅ در موبایل هم از فشرده شدن تصویر جلوگیری می‌کنیم */
+        background-size: 100% auto !important; 
         background-attachment: scroll !important;
         background-position: top center !important;
         background-repeat: no-repeat !important;
+        
+        /* حفظ یکپارچگی لایه در موبایل */
+        -webkit-transform: translateZ(0) !important;
+        transform: translateZ(0) !important;
+        min-height: 5800px !important;
     }
     .swiper-frame {
         width: calc(100% - 40px) !important;
