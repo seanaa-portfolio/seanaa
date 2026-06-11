@@ -37,8 +37,7 @@ font-display: swap;
 html { 
     line-height: 1.15; 
     -webkit-text-size-adjust: 100%; 
-    height: 100%;
-    min-height: 100%;
+    min-height: 100%; /* ✅ اطمینان از پوشش کامل ارتفاع */
 }
 
 body {
@@ -50,31 +49,18 @@ body {
     color: #111;
     line-height: 1.8;
     background-color: #f3f4f6;
-    position: relative;
+    position: relative; /* ✅ مهار استیکرهای absolute نسبت به بدنه */
     background-image: url('https://uploadkon.ir/uploads/d81010_26site-nahai-6.png'), linear-gradient(to bottom right, #caf4ff, #73e1fd);
-    
-    /* ✅ تغییر ۱: کشیدن بک‌گراند به اندازه کل ارتفاع سند برای جلوگیری از تمام شدن تصویر */
-    background-size: 100% 100%; 
+    background-size: 100% 100%; /* ✅ تغییر کلیدی: کشیدن بک‌گراند به اندازه کل ارتفاع سند */
     background-attachment: scroll;
     background-position: top center;
     background-repeat: no-repeat;
     
-    /* ✅ تغییر ۲: اجبار مرورگر به رندر کل صفحه به عنوان یک لایه واحد (جلوگیری از پارگی اسکرول) */
+    /* ✅ تغییرات کلیدی برای ادغام لایه‌ها و جلوگیری از باگ اسکرول جداگانه */
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
-    -webkit-transform: translate3d(0, 0, 0);
-    transform: translate3d(0, 0, 0);
-    will-change: scroll-position;
-    
-    /* ✅ تغییر ۳: تضمین ارتفاع کافی برای جلوگیری از رها شدن استیکرهای دور (مثل top: 5200px) */
-    min-height: 6000px; 
-}
-
-/* اطمینان از اینکه اسکرول فقط در سطح بادی اتفاق می‌افتد */
-html, body { 
-    max-width: 100%; 
-    overflow-x: hidden; 
-    overflow-y: auto;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
 }
 
 details, main { display: block; }
@@ -120,21 +106,19 @@ a:hover { color: #a3aab8; }
     min-height: 270px;
 }
 
+html, body { max-width: 100%; overflow-x: hidden; }
+
 .sticker-layer {
     position: absolute !important;
     height: auto;
-    /* ✅ تغییر ۴: کاهش شدید z-index برای جلوگیری از تداخل لایه‌ها و باگ رندر */
-    z-index: 1 !important; 
+    z-index: 1 !important; /* ✅ کاهش z-index برای قرارگیری صحیح در لایه */
     pointer-events: none !important;
     background: transparent !important;
     user-select: none;
     -webkit-user-drag: none;
     object-fit: contain;
-    
-    /* ✅ همگام‌سازی اجباری استیکر با لایه اصلی بادی */
-    -webkit-transform: translateZ(0);
-    transform: translateZ(0);
-    will-change: transform;
+    top: auto; /* ✅ اطمینان از پیروی از مختصات اینلاین */
+    left: auto;
 }
 .sticker-layer::-webkit-media-controls { display: none !important; }
 
@@ -369,16 +353,10 @@ a:hover { color: #a3aab8; }
 @media screen and (max-width: 768px) {
     body {
         background-image: url('https://uploadkon.ir/uploads/7f2d10_26site-akharin.png'), linear-gradient(to bottom right, #caf4ff, #73e1fd) !important;
-        /* ✅ تغییر کلیدی در موبایل برای پوشش کامل و یکپارچه */
-        background-size: 100% 100% !important; 
+        background-size: 100% 100% !important; /* ✅ تغییر کلیدی در موبایل برای پوشش کامل */
         background-attachment: scroll !important;
         background-position: top center !important;
         background-repeat: no-repeat !important;
-        
-        /* حفظ یکپارچگی لایه در موبایل */
-        -webkit-transform: translate3d(0, 0, 0) !important;
-        transform: translate3d(0, 0, 0) !important;
-        min-height: 6000px !important;
     }
     .swiper-frame {
         width: calc(100% - 40px) !important;
