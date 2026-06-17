@@ -6,6 +6,47 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
 <title>نمونه کارها و رزومه</title>
 <style>
+/* ========================================== */
+/* ✅ SVG Overlay Variables (Desktop Only)    */
+/* ========================================== */
+:root {
+  /* Name SVG Configuration */
+  --name-width: 250px;
+  --name-height: auto;
+  --name-tx: 0px;
+  --name-ty: 0px;
+
+  /* Welcome SVG Configuration */
+  --welcome-width: 450px;
+  --welcome-height: auto;
+  --welcome-tx: 0px;
+  --welcome-ty: 0px;
+
+  /* Title 1: Motion Graphics Configuration */
+  --title1-width: 350px;
+  --title1-height: auto;
+  --title1-tx: 0px;
+  --title1-ty: -140px;
+
+  /* Title 2: Animation Configuration */
+  --title2-width: 350px;
+  --title2-height: auto;
+  --title2-tx: 0px;
+  --title2-ty: -140px;
+
+  /* Title 3: Self & University Configuration */
+  --title3-width: 350px;
+  --title3-height: auto;
+  --title3-tx: 0px;
+  --title3-ty: -140px;
+
+  /* Title 4: License & Certificates Configuration */
+  --title4-width: 350px;
+  --title4-height: auto;
+  --title4-tx: 0px;
+  --title4-ty: -140px;
+}
+
 /* فونت‌ها */
 @font-face {
 font-family: sina;
@@ -47,6 +88,7 @@ color: #111;
 line-height: 1.8;
 background-color: #f3f4f6;
 position: relative;
+/* ✅ Background Updated for Desktop */
 background-image: url('https://uploadkon.ir/uploads/3ba017_26site-WO-.png'), linear-gradient(to bottom right, #caf4ff, #73e1fd);
 background-size: 100% auto;
 background-attachment: scroll;
@@ -62,104 +104,51 @@ max-width: 100%;
 overflow-x: hidden;
 overflow-y: auto;
 }
-
-/* ✅ Hide Scrollbar */
-html, body {
-    scrollbar-width: none;
-    -ms-overflow-style: none;
-}
-html::-webkit-scrollbar, body::-webkit-scrollbar {
-    display: none;
-}
-
-/* ✅ Editable Variables for New Elements */
-:root {
-    /* Name Variables */
-    --name-width: 18%;
-    --name-top: 10%;
-    --name-right: 6%;
-
-    /* Welcome Text Variables */
-    --welcome-width: 28%;
-    --welcome-top: 24%;
-    --welcome-right: 6%;
-
-    /* Slider Titles Variables */
-    --title-width: 22%;
-    --title-spacing: 25px;
-
-    /* New Sticker Variables */
-    --new-sticker-width: 400px;
-    --new-sticker-top: 4800px;
-    --new-sticker-left: 50px;
-}
-
-/* ✅ Name & Welcome Text Styles */
-.my-name, .welcome-text {
-    position: absolute;
-    z-index: 10;
-    pointer-events: none;
-    user-select: none;
-    -webkit-user-drag: none;
-}
-.my-name {
-    width: var(--name-width);
-    top: var(--name-top);
-    right: var(--name-right);
-}
-.welcome-text {
-    width: var(--welcome-width);
-    top: var(--welcome-top);
-    right: var(--welcome-right);
-}
-
-/* ✅ Slider Title Styles */
-.slider-title-img {
-    width: var(--title-width);
-    margin-bottom: var(--title-spacing);
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    max-width: 100%;
-    height: auto;
-    pointer-events: none;
-    user-select: none;
-    -webkit-user-drag: none;
-}
-
 details, main { display: block; }
 h1 { font-size: 2em; margin: .67em 0; }
-hr { box-sizing: content-box; height: 0; overflow: visible; }
+hr { box-sizing: content-box; height: 0;
+overflow: visible; }
 code, kbd, pre, samp { font-family: sina; font-size: 1em; }
 a { background-color: transparent; }
-abbr[title] { border-bottom: none; text-decoration: underline dotted; }
+abbr[title] { border-bottom: none;
+text-decoration: underline dotted; }
 b, strong { font-weight: bolder; }
 small { font-size: 80%; }
-sub, sup { font-size: 75%; line-height: 0; position: relative; vertical-align: baseline; }
+sub, sup { font-size: 75%; line-height: 0;
+position: relative; vertical-align: baseline; }
 sub { bottom: -.25em; }
 sup { top: -.5em; }
-img { border-style: none; }
+img { border-style: none;
+}
 button, input, optgroup, select, textarea { font-family: sina; font-size: 100%; line-height: 1.15; margin: 0; }
-button, input { overflow: visible; }
+button, input { overflow: visible;
+}
 button, select { text-transform: none; }
-[type=button], [type=reset], [type=submit], button { appearance: button; -webkit-appearance: button; }
+[type=button], [type=reset], [type=submit], button { appearance: button; -webkit-appearance: button;
+}
 [type=button]::-moz-focus-inner, [type=reset]::-moz-focus-inner, [type=submit]::-moz-focus-inner, button::-moz-focus-inner { border-style: none; padding: 0; }
-[type=button]:-moz-focusring, [type=reset]:-moz-focusring, [type=submit]:-moz-focusring, button:-moz-focusring { outline: 1px dotted ButtonText; }
+[type=button]:-moz-focusring, [type=reset]:-moz-focusring, [type=submit]:-moz-focusring, button:-moz-focusring { outline: 1px dotted ButtonText;
+}
 fieldset { padding: .35em .75em .625em; }
 legend { color: inherit; display: table; max-width: 100%; white-space: normal; }
-progress { vertical-align: baseline; }
+progress { vertical-align: baseline;
+}
 textarea { overflow: auto; }
 [type=checkbox], [type=radio], legend { box-sizing: border-box; padding: 0; }
-[type=number]::-webkit-inner-spin-button, [type=number]::-webkit-outer-spin-button { height: auto; }
+[type=number]::-webkit-inner-spin-button, [type=number]::-webkit-outer-spin-button { height: auto;
+}
 [type=search] { appearance: textfield; -webkit-appearance: textfield; outline-offset: -2px; }
 [type=search]::-webkit-search-decoration { -webkit-appearance: none; }
-::-webkit-file-upload-button { -webkit-appearance: button; font: inherit; }
+::-webkit-file-upload-button { -webkit-appearance: button; font: inherit;
+}
 summary { display: list-item; }
 [hidden], template { display: none; }
 * { box-sizing: border-box; }
-img { max-width: 100%; height: auto; display: block; }
+img { max-width: 100%; height: auto;
+display: block; }
 .wrap { width: 100%; max-width: 992px; padding-right: 15px; padding-left: 15px; margin-left: auto; margin-right: auto; }
-a { color: #626b7f; text-decoration: none; }
+a { color: #626b7f;
+text-decoration: none; }
 a:hover { color: #a3aab8; }
 .header-placeholder {
 padding: 997px 15px;
@@ -179,6 +168,54 @@ user-select: none;
 object-fit: contain;
 }
 .sticker-layer::-webkit-media-controls { display: none !important; }
+
+/* ========================================== */
+/* ✅ استایل‌های SVG دسکتاپ افزوده شده */
+/* ========================================== */
+.desktop-svg-overlay {
+  position: absolute;
+  z-index: 5;
+  pointer-events: none; /* Prevents blocking clicks underneath */
+}
+.name-svg-overlay {
+  top: 50px;
+  right: 50px;
+  width: var(--name-width);
+  height: var(--name-height);
+  transform: translate(var(--name-tx), var(--name-ty));
+}
+.welcome-svg-overlay {
+  top: 250px;
+  left: 50%;
+  width: var(--welcome-width);
+  height: var(--welcome-height);
+  transform: translate(calc(-50% + var(--welcome-tx)), var(--welcome-ty));
+}
+.title-svg-overlay {
+  left: 50%;
+  top: 0;
+}
+.title-1-overlay {
+  width: var(--title1-width);
+  height: var(--title1-height);
+  transform: translate(calc(-50% + var(--title1-tx)), var(--title1-ty));
+}
+.title-2-overlay {
+  width: var(--title2-width);
+  height: var(--title2-height);
+  transform: translate(calc(-50% + var(--title2-tx)), var(--title2-ty));
+}
+.title-3-overlay {
+  width: var(--title3-width);
+  height: var(--title3-height);
+  transform: translate(calc(-50% + var(--title3-tx)), var(--title3-ty));
+}
+.title-4-overlay {
+  width: var(--title4-width);
+  height: var(--title4-height);
+  transform: translate(calc(-50% + var(--title4-tx)), var(--title4-ty));
+}
+
 /* ========================================== */
 /* ✅ استایل‌های اسلایدرها و فاصله‌گذاری */
 /* ========================================== */
@@ -191,7 +228,8 @@ margin-bottom: 396px;
 margin-bottom: 10px;
 }
 @media screen and (max-width: 768px) {
-.slider-section { margin-bottom: 150px; }
+.slider-section { margin-bottom: 150px;
+}
 .slider-section:last-of-type { margin-bottom: 10px; }
 }
 /* ========================================== */
@@ -233,16 +271,19 @@ font-weight: bold;
 filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));
 }
 @keyframes bounceRight {
-0%, 100% { transform: translateX(0); }
+0%, 100% { transform: translateX(0);
+}
 50% { transform: translateX(8px); }
 }
 @media screen and (max-width: 1100px) {
 .slider-click-hint { left: -95px; }
-.slider-click-hint .hint-text { font-size: 12px; }
+.slider-click-hint .hint-text { font-size: 12px;
+}
 .slider-click-hint .hint-arrow { font-size: 28px; }
 }
 @media screen and (max-width: 900px) {
-.slider-click-hint { display: none; }
+.slider-click-hint { display: none;
+}
 }
 /* ========================================== */
 /* ✅ اطلاعات تماس */
@@ -351,25 +392,39 @@ background: #000;
 --swiper-navigation-size: 50px;
 --swiper-navigation-color: #fff;
 }
-.blogix-swiper { width: 100%; height: 100%; direction: ltr !important; border-radius: 20px; overflow: hidden; }
+.blogix-swiper { width: 100%; height: 100%; direction: ltr !important; border-radius: 20px; overflow: hidden;
+}
 .swiper-wrapper { direction: ltr !important; }
-.swiper-slide { width: 100% !important; height: 100% !important; position: relative; overflow: hidden; cursor: pointer; background-color: #111; }
-.slide-media { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: 1; transition: transform 0.4s ease; transform: scale(1); }
-.slide-text { position: absolute; bottom: 37px; left: 20px; right: 20px; padding: 16px 20px; background: rgba(0,0,0,0.30); backdrop-filter: blur(3px); border-radius: 20px; color: #fff; z-index: 2; transform: translateY(0); opacity: 1; transition: all 0.4s ease; text-align: right; direction: rtl !important; font-family: 'Tarik', sans-serif; pointer-events: none; }
-.slide-text h3 { margin: 0; font-size: 20px; line-height: 1.6; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.swiper-slide { width: 100% !important; height: 100% !important; position: relative; overflow: hidden; cursor: pointer;
+background-color: #111; }
+.slide-media { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: 1;
+transition: transform 0.4s ease; transform: scale(1); }
+.slide-text { position: absolute; bottom: 37px; left: 20px; right: 20px; padding: 16px 20px;
+background: rgba(0,0,0,0.30); backdrop-filter: blur(3px); border-radius: 20px; color: #fff; z-index: 2; transform: translateY(0); opacity: 1; transition: all 0.4s ease; text-align: right;
+direction: rtl !important; font-family: 'Tarik', sans-serif; pointer-events: none; }
+.slide-text h3 { margin: 0; font-size: 20px; line-height: 1.6; white-space: nowrap;
+overflow: hidden; text-overflow: ellipsis; }
 @media (hover: hover) {
 .swiper-slide:hover .slide-media { transform: scale(1.05); }
-.swiper-slide:hover .slide-text { transform: translateY(-5px); background: rgba(0,0,0,0.85); }
+.swiper-slide:hover .slide-text { transform: translateY(-5px); background: rgba(0,0,0,0.85);
 }
-.swiper-button-prev, .swiper-button-next { background: rgba(0, 0, 0, 0.30); border-radius: 25%; backdrop-filter: blur(3px); z-index: 50; transition: all 0.3s ease; top: 50%; width: calc(var(--swiper-navigation-size) / 40 * 40) !important; height: calc(var(--swiper-navigation-size) / 40 * 40) !important; box-shadow: 0 4px 12px rgba(0,0,0,0.3); }
+}
+.swiper-button-prev, .swiper-button-next { background: rgba(0, 0, 0, 0.30); border-radius: 25%; backdrop-filter: blur(3px); z-index: 50; transition: all 0.3s ease; top: 50%;
+width: calc(var(--swiper-navigation-size) / 40 * 40) !important; height: calc(var(--swiper-navigation-size) / 40 * 40) !important; box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
 .swiper-button-prev { left: 15px !important; right: auto !important; }
-.swiper-button-next { right: 15px !important; left: auto !important; }
+.swiper-button-next { right: 15px !important; left: auto !important;
+}
 .swiper-button-prev:hover, .swiper-button-next:hover { background: rgba(0,0,0,0.85); transform: scale(1.1); }
-.swiper-button-prev::after, .swiper-button-next::after { font-size: 24px !important; font-weight: 900 !important; }
+.swiper-button-prev::after, .swiper-button-next::after { font-size: 24px !important; font-weight: 900 !important;
+}
 .swiper-button-prev svg, .swiper-button-next svg { width: 24px !important; height: 24px !important; stroke-width: 4px !important; }
-.swiper-pagination { bottom: 15px !important; z-index: 50 !important; display: flex; flex-direction: row; justify-content: center; }
-.swiper-pagination-bullet { width: 8px !important; height: 8px !important; background: rgba(255,255,255,0.5) !important; opacity: 1 !important; margin: 0 6px !important; transition: all 0.3s ease !important; }
-.swiper-pagination-bullet-active { width: 24px !important; background: #ffffff !important; border-radius: 999px !important; }
+.swiper-pagination { bottom: 15px !important;
+z-index: 50 !important; display: flex; flex-direction: row; justify-content: center; }
+.swiper-pagination-bullet { width: 8px !important; height: 8px !important; background: rgba(255,255,255,0.5) !important;
+opacity: 1 !important; margin: 0 6px !important; transition: all 0.3s ease !important; }
+.swiper-pagination-bullet-active { width: 24px !important; background: #ffffff !important;
+border-radius: 999px !important; }
 /* ✅ FIX: Added touch-action and overscroll-behavior to prevent iOS background scrolling */
 .video-modal, .image-modal {
 display: none;
@@ -388,53 +443,57 @@ backdrop-filter: blur(8px);
 overscroll-behavior: none;
 touch-action: none;
 }
-.video-modal.active, .image-modal.active { display: flex; opacity: 1; }
-.modal-video-container { position: relative; width: 90vw; max-width: 1100px; display: flex; flex-direction: column; align-items: center; }
-.modal-video-container video { width: 100%; max-height: 80vh; border-radius: 12px; box-shadow: 0 15px 40px rgba(0,0,0,0.6); outline: none; background: #000; }
-.close-modal { position: absolute; top: -45px; right: 0; color: #fff; font-size: 32px; font-weight: bold; cursor: pointer; background: rgba(255,255,255,0.1); border: none; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; transition: background 0.2s; }
-.close-modal:hover { background: rgba(255,255,255,0.3); }
+.video-modal.active, .image-modal.active { display: flex;
+opacity: 1; }
+.modal-video-container { position: relative; width: 90vw; max-width: 1100px; display: flex; flex-direction: column; align-items: center;
+}
+.modal-video-container video { width: 100%; max-height: 80vh; border-radius: 12px; box-shadow: 0 15px 40px rgba(0,0,0,0.6); outline: none; background: #000;
+}
+.close-modal { position: absolute; top: -45px; right: 0; color: #fff; font-size: 32px; font-weight: bold; cursor: pointer; background: rgba(255,255,255,0.1); border: none;
+width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; transition: background 0.2s; }
+.close-modal:hover { background: rgba(255,255,255,0.3);
+}
 .modal-title { color: #fff; font-family: 'Tarik', sans-serif; margin-top: 15px; font-size: 18px; text-align: center; direction: rtl; }
-.modal-image-container { position: relative; width: 90vw; max-width: 1100px; display: flex; flex-direction: column; align-items: center; }
-.modal-image-container img { max-width: 100%; max-height: 80vh; border-radius: 12px; box-shadow: 0 15px 40px rgba(0,0,0,0.6); outline: none; background: #000; transition: transform 0.3s ease; transform-origin: center center; cursor: zoom-in; user-select: none; touch-action: none; -webkit-user-drag: none; }
-.zoom-controls { position: absolute; bottom: -50px; display: flex; gap: 15px; z-index: 10; }
-.zoom-controls button { background: rgba(255,255,255,0.15); border: 1px solid rgba(255,255,255,0.3); color: #fff; width: 40px; height: 40px; border-radius: 50%; font-size: 20px; cursor: pointer; transition: all 0.2s; display: flex; align-items: center; justify-content: center; }
-.zoom-controls button:hover { background: rgba(255,255,255,0.3); transform: scale(1.1); }
+.modal-image-container { position: relative;
+width: 90vw; max-width: 1100px; display: flex; flex-direction: column; align-items: center; }
+.modal-image-container img { max-width: 100%; max-height: 80vh; border-radius: 12px;
+box-shadow: 0 15px 40px rgba(0,0,0,0.6); outline: none; background: #000; transition: transform 0.3s ease; transform-origin: center center; cursor: zoom-in; user-select: none;
+touch-action: none; -webkit-user-drag: none; }
+.zoom-controls { position: absolute; bottom: -50px; display: flex; gap: 15px; z-index: 10;
+}
+.zoom-controls button { background: rgba(255,255,255,0.15); border: 1px solid rgba(255,255,255,0.3); color: #fff; width: 40px; height: 40px; border-radius: 50%; font-size: 20px;
+cursor: pointer; transition: all 0.2s; display: flex; align-items: center; justify-content: center; }
+.zoom-controls button:hover { background: rgba(255,255,255,0.3); transform: scale(1.1);
+}
 @media screen and (max-width: 768px) {
 .swiper-frame { --swiper-navigation-size: 42px; }
-.slide-text { bottom: 50px; left: 15px; right: 15px; padding: 12px 16px; }
+.slide-text { bottom: 50px; left: 15px; right: 15px; padding: 12px 16px;
+}
 .slide-text h3 { font-size: 16px; }
 .swiper-button-prev::after, .swiper-button-next::after { font-size: 18px !important; }
-.swiper-button-prev svg, .swiper-button-next svg { width: 18px !important; height: 18px !important; stroke-width: 3px !important; }
+.swiper-button-prev svg, .swiper-button-next svg { width: 18px !important;
+height: 18px !important; stroke-width: 3px !important; }
 .swiper-pagination { bottom: 12px !important; }
-.swiper-pagination-bullet { width: 7px !important; height: 7px !important; margin: 0 5px !important; }
+.swiper-pagination-bullet { width: 7px !important; height: 7px !important;
+margin: 0 5px !important; }
 .swiper-pagination-bullet-active { width: 20px !important; }
-
-/* ✅ Responsive Variables for Mobile */
-:root {
-    --name-width: 35%;
-    --name-top: 8%;
-    --name-right: 5%;
-    
-    --welcome-width: 50%;
-    --welcome-top: 18%;
-    --welcome-right: 5%;
-    
-    --title-width: 40%;
-    --title-spacing: 15px;
-}
+/* ✅ Hide Custom Desktop SVGs on Mobile */
+.desktop-svg-overlay { display: none !important; }
 }
 /* ========================================== */
 /* ✅ تغییرات اختصاصی موبایل (اندروید و iOS) */
 /* ========================================== */
-.slider-mobile-title { display: none; }
+.slider-mobile-title { display: none;
+}
 @media screen and (max-width: 768px) {
 body {
-background-image: url('https://uploadkon.ir/uploads/3ba017_26site-WO-.png'), linear-gradient(to bottom right, #caf4ff, #73e1fd) !important;
+background-image: url('https://uploadkon.ir/uploads/7f2d10_26site-akharin.png'), linear-gradient(to bottom right, #caf4ff, #73e1fd) !important;
 background-size: 100% auto !important;
 background-attachment: scroll !important;
 background-position: top center !important;
 background-repeat: no-repeat !important;
-/* ❌ FIX: Removed transform: translateZ(0) !important; to fix fixed positioning */
+/* ❌ FIX: Removed transform: translateZ(0) !important;
+to fix fixed positioning */
 /* ✅ FIX: Changed min-height from 5800px to auto to remove excess empty space on mobile */
 min-height: auto !important;
 }
@@ -494,42 +553,28 @@ letter-spacing: 0.5px !important;
 .swiper-frame {
 width: calc(100% - 24px) !important;
 }
-
-/* ✅ Responsive Variables for Small Mobile */
-:root {
-    --name-width: 45%;
-    --welcome-width: 65%;
-    --title-width: 55%;
-}
 }
 </style>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
 </head>
 <body>
+<img class="desktop-svg-overlay name-svg-overlay" src="https://raw.githubusercontent.com/seanaasamavi/svg/8f86a66cd0a8652b3af2e2b4e10f21de66e38767/seanaa.svg" alt="Name">
+<img class="desktop-svg-overlay welcome-svg-overlay" src="https://raw.githubusercontent.com/seanaasamavi/svg/8f86a66cd0a8652b3af2e2b4e10f21de66e38767/welcom.svg" alt="Welcome">
 
-<!-- ✅ Name and Welcome Text -->
-<img src="https://raw.githubusercontent.com/seanaasamavi/svg/8f86a66cd0a8652b3af2e2b4e10f21de66e38767/seanaa.svg" class="my-name" alt="Name">
-<img src="https://raw.githubusercontent.com/seanaasamavi/svg/8f86a66cd0a8652b3af2e2b4e10f21de66e38767/welcom.svg" class="welcome-text" alt="Welcome">
-
-<!-- استیکرهای ویدیویی پس‌زمینه -->
 <video class="sticker-layer" src="https://raw.githubusercontent.com/seanaasamavi/sticker/main/Pre-comp%201-1.webm" autoplay loop muted playsinline style="top: 5200px; left: 1030px; width: 500px;"></video>
 <video class="sticker-layer" src="https://raw.githubusercontent.com/seanaasamavi/sticker/main/Pre-comp%202-1.webm" autoplay loop muted playsinline style="top: 2600px; left: 1200px; width: 350px;"></video>
 <video class="sticker-layer" src="https://raw.githubusercontent.com/seanaasamavi/sticker/main/Pre-comp%203-1.webm" autoplay loop muted playsinline style="top: 3600px; left: 20px; width: 350px;"></video>
 <video class="sticker-layer" src="https://uploadkon.ir/uploads/0b5715_26license.png" autoplay loop muted playsinline style="top: 772px; left: 138px; width: 400px;"></video>
-<!-- ✅ New Sticker -->
-<video class="sticker-layer" src="https://raw.githubusercontent.com/seanaa-portfolio/portfolio/1868fd49f0166ff1dcbebbc8b64f8f5637c55130/3-1.webm" autoplay loop muted playsinline style="top: var(--new-sticker-top); left: var(--new-sticker-left); width: var(--new-sticker-width);"></video>
-
 <div class="wrap">
 <div class="header-placeholder"></div>
 </div>
 
-<!-- ✅ اسلایدر اول با آیکون click here -->
 <div class="slider-section" id="first-slider">
+<img class="desktop-svg-overlay title-svg-overlay title-1-overlay" src="https://raw.githubusercontent.com/seanaasamavi/svg/8f86a66cd0a8652b3af2e2b4e10f21de66e38767/motion.svg" alt="Motion Graphics Title">
 <a href="#first-slider" class="slider-click-hint">
 <span class="hint-arrow">→</span>
 <span class="hint-text">click here</span>
 </a>
-<img src="https://raw.githubusercontent.com/seanaasamavi/svg/8f86a66cd0a8652b3af2e2b4e10f21de66e38767/motion.svg" class="slider-title-img" alt="Motion Graphic">
 <div class="slider-mobile-title">MOTION GRAPHICS SAMPLE</div>
 <div class="swiper-frame">
 <div class="swiper-button-prev"></div>
@@ -586,9 +631,8 @@ width: calc(100% - 24px) !important;
 </div>
 </div>
 
-<!-- ✅ اسلایدر دوم -->
 <div class="slider-section">
-<img src="https://raw.githubusercontent.com/seanaasamavi/svg/8f86a66cd0a8652b3af2e2b4e10f21de66e38767/animate.svg" class="slider-title-img" alt="Animate Sample">
+<img class="desktop-svg-overlay title-svg-overlay title-2-overlay" src="https://raw.githubusercontent.com/seanaasamavi/svg/8f86a66cd0a8652b3af2e2b4e10f21de66e38767/animate.svg" alt="Animation Title">
 <div class="slider-mobile-title">ANIMATION SAMPLE</div>
 <div class="swiper-frame">
 <div class="swiper-button-prev"></div>
@@ -625,9 +669,8 @@ width: calc(100% - 24px) !important;
 </div>
 </div>
 
-<!-- ✅ اسلایدر سوم -->
 <div class="slider-section">
-<img src="https://raw.githubusercontent.com/seanaasamavi/svg/8f86a66cd0a8652b3af2e2b4e10f21de66e38767/self.svg" class="slider-title-img" alt="Self & University Project">
+<img class="desktop-svg-overlay title-svg-overlay title-3-overlay" src="https://raw.githubusercontent.com/seanaasamavi/svg/8f86a66cd0a8652b3af2e2b4e10f21de66e38767/self.svg" alt="Self & University Project Title">
 <div class="slider-mobile-title">SELF & UNIVERSITY PROJECT</div>
 <div class="swiper-frame image-slider">
 <div class="swiper-button-prev"></div>
@@ -688,9 +731,8 @@ width: calc(100% - 24px) !important;
 </div>
 </div>
 
-<!-- ✅ اسلایدر چهارم -->
 <div class="slider-section">
-<img src="https://raw.githubusercontent.com/seanaasamavi/svg/8f86a66cd0a8652b3af2e2b4e10f21de66e38767/license.svg" class="slider-title-img" alt="License & Certificates">
+<img class="desktop-svg-overlay title-svg-overlay title-4-overlay" src="https://raw.githubusercontent.com/seanaasamavi/svg/8f86a66cd0a8652b3af2e2b4e10f21de66e38767/license.svg" alt="License Title">
 <div class="slider-mobile-title">LICENSE & CERTIFICATES</div>
 <div class="swiper-frame image-slider">
 <div class="swiper-button-prev"></div>
@@ -723,7 +765,6 @@ width: calc(100% - 24px) !important;
 </div>
 </div>
 
-<!-- ✅ اطلاعات تماس -->
 <div class="contact-footer">
 <div class="contact-label">Get in Touch</div>
 <div class="contact-row">
@@ -739,17 +780,14 @@ width: calc(100% - 24px) !important;
 </div>
 </div>
 
-<!-- ✅ مودال ویدیو -->
 <div class="video-modal" id="videoModal">
 <div class="modal-video-container">
 <button class="close-modal" id="closeModal">×</button>
-<!-- ✅ FIX: Removed 'muted' attribute from HTML, handled dynamically in JS for better audio support -->
 <video id="modalVideo" controls playsinline></video>
 <div class="modal-title" id="modalTitle"></div>
 </div>
 </div>
 
-<!-- ✅ مودال تصویر -->
 <div class="image-modal" id="imageModal">
 <div class="modal-image-container">
 <button class="close-modal" id="closeImageModal">×</button>
@@ -816,7 +854,8 @@ const media = activeSlide.querySelector('.slide-media');
 if (media && media.tagName === 'VIDEO') {
 media.muted = true;
 media.preload = 'auto';
-try { media.load(); } catch(e) {}
+try { media.load();
+} catch(e) {}
 const playPromise = media.play();
 if (playPromise !== undefined) {
 playPromise.catch(() => {
