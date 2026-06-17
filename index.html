@@ -6,6 +6,39 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
 <title>نمونه کارها و رزومه</title>
 <style>
+/* ============================================================ */
+/* ✅ EDITABLE VARIABLES — Adjust all positions & scales here    */
+/* ============================================================ */
+:root {
+    /* -------------------------------------------------------- */
+    /* 🏷️  NAME SVG  (upper-right corner)                       */
+    /* -------------------------------------------------------- */
+    --nameX: 5%;          /* Horizontal offset from RIGHT edge   */
+    --nameY: 8%;          /* Vertical offset from TOP edge       */
+    --nameScale: 1;       /* 1 = 100%, 1.5 = 150%, 0.5 = 50%   */
+
+    /* -------------------------------------------------------- */
+    /* 👋 WELCOME SVG  (below the name, ~200px gap)             */
+    /* -------------------------------------------------------- */
+    --welcomeX: 5%;       /* Horizontal offset from RIGHT edge   */
+    --welcomeY: 28%;      /* Vertical offset from TOP edge       */
+    --welcomeScale: 1;    /* 1 = 100%, 1.5 = 150%, 0.5 = 50%   */
+
+    /* -------------------------------------------------------- */
+    /* 🎞️  SWIPER TITLE SVGs  (above each swiper)               */
+    /* -------------------------------------------------------- */
+    --titleScale: 1;        /* 1 = 100%, 1.5 = 150%, 0.5 = 50% */
+    --titleOffsetY: 30px;   /* Gap between title and swiper      */
+    --titleAlignment: center; /* flex-start | center | flex-end  */
+
+    /* -------------------------------------------------------- */
+    /* 🎈 NEW STICKER                                            */
+    /* -------------------------------------------------------- */
+    --stickerX: 50%;      /* Horizontal position (left offset)   */
+    --stickerY: 4800px;   /* Vertical position (top offset)      */
+    --stickerScale: 1;    /* 1 = 100%, 1.5 = 150%, 0.5 = 50%   */
+}
+
 /* فونت‌ها */
 @font-face {
 font-family: sina;
@@ -47,14 +80,14 @@ color: #111;
 line-height: 1.8;
 background-color: #f3f4f6;
 position: relative;
-background-image: url('https://uploadkon.ir/uploads/d81010_26site-nahai-6.png'), linear-gradient(to bottom right, #caf4ff, #73e1fd);
+/* ✅ BACKGROUND REPLACED */
+background-image: url('https://uploadkon.ir/uploads/3ba017_26site-WO-.png'), linear-gradient(to bottom right, #caf4ff, #73e1fd);
 background-size: 100% auto;
 background-attachment: scroll;
 background-position: top center;
 background-repeat: no-repeat;
 -webkit-backface-visibility: hidden;
 backface-visibility: hidden;
-/* ❌ FIX: Removed transform: translateZ(0) to prevent breaking position: fixed modals */
 min-height: 5800px;
 }
 html, body {
@@ -114,6 +147,58 @@ user-select: none;
 object-fit: contain;
 }
 .sticker-layer::-webkit-media-controls { display: none !important; }
+
+/* ========================================== */
+/* ✅ NAME SVG  (upper-right corner)          */
+/* ========================================== */
+.name-svg {
+    position: absolute;
+    top: var(--nameY);
+    right: var(--nameX);
+    width: 15vw;
+    height: auto;
+    transform: scale(var(--nameScale));
+    transform-origin: top right;
+    z-index: 5;
+    pointer-events: none;
+    user-select: none;
+    -webkit-user-drag: none;
+}
+
+/* ========================================== */
+/* ✅ WELCOME SVG  (below the name)           */
+/* ========================================== */
+.welcome-svg {
+    position: absolute;
+    top: var(--welcomeY);
+    right: var(--welcomeX);
+    width: 22vw;
+    height: auto;
+    transform: scale(var(--welcomeScale));
+    transform-origin: top right;
+    z-index: 5;
+    pointer-events: none;
+    user-select: none;
+    -webkit-user-drag: none;
+}
+
+/* ========================================== */
+/* ✅ SWIPER TITLE SVGs  (above each swiper)  */
+/* ========================================== */
+.swiper-title-wrapper {
+    display: flex;
+    justify-content: var(--titleAlignment);
+    margin-bottom: var(--titleOffsetY);
+    pointer-events: none;
+    user-select: none;
+}
+.swiper-title-svg {
+    width: calc(25vw * var(--titleScale));
+    max-width: 400px;
+    height: auto;
+    -webkit-user-drag: none;
+}
+
 /* ========================================== */
 /* ✅ استایل‌های اسلایدرها و فاصله‌گذاری */
 /* ========================================== */
@@ -343,6 +428,11 @@ touch-action: none;
 .swiper-pagination { bottom: 12px !important; }
 .swiper-pagination-bullet { width: 7px !important; height: 7px !important; margin: 0 5px !important; }
 .swiper-pagination-bullet-active { width: 20px !important; }
+
+/* ✅ Mobile adjustments for new SVG assets */
+.name-svg    { width: 28vw; }
+.welcome-svg { width: 40vw; }
+.swiper-title-svg { max-width: 260px; }
 }
 /* ========================================== */
 /* ✅ تغییرات اختصاصی موبایل (اندروید و iOS) */
@@ -350,13 +440,12 @@ touch-action: none;
 .slider-mobile-title { display: none; }
 @media screen and (max-width: 768px) {
 body {
-background-image: url('https://uploadkon.ir/uploads/7f2d10_26site-akharin.png'), linear-gradient(to bottom right, #caf4ff, #73e1fd) !important;
+/* ✅ BACKGROUND REPLACED (mobile) */
+background-image: url('https://uploadkon.ir/uploads/3ba017_26site-WO-.png'), linear-gradient(to bottom right, #caf4ff, #73e1fd) !important;
 background-size: 100% auto !important;
 background-attachment: scroll !important;
 background-position: top center !important;
 background-repeat: no-repeat !important;
-/* ❌ FIX: Removed transform: translateZ(0) !important; to fix fixed positioning */
-/* ✅ FIX: Changed min-height from 5800px to auto to remove excess empty space on mobile */
 min-height: auto !important;
 }
 .swiper-frame {
@@ -415,25 +504,57 @@ letter-spacing: 0.5px !important;
 .swiper-frame {
 width: calc(100% - 24px) !important;
 }
+
+/* ✅ Extra-small screen adjustments */
+.name-svg    { width: 35vw; }
+.welcome-svg { width: 50vw; }
+.swiper-title-svg { max-width: 200px; }
 }
 </style>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
 </head>
 <body>
+
+<!-- ✅ NAME SVG  (upper-right corner) -->
+<img class="name-svg"
+     src="https://raw.githubusercontent.com/seanaasamavi/svg/8f86a66cd0a8652b3af2e2b4e10f21de66e38767/seanaa.svg"
+     alt="Seanaa">
+
+<!-- ✅ WELCOME SVG  (below the name) -->
+<img class="welcome-svg"
+     src="https://raw.githubusercontent.com/seanaasamavi/svg/8f86a66cd0a8652b3af2e2b4e10f21de66e38767/welcom.svg"
+     alt="Welcome">
+
 <!-- استیکرهای ویدیویی پس‌زمینه -->
 <video class="sticker-layer" src="https://raw.githubusercontent.com/seanaasamavi/sticker/main/Pre-comp%201-1.webm" autoplay loop muted playsinline style="top: 5200px; left: 1030px; width: 500px;"></video>
 <video class="sticker-layer" src="https://raw.githubusercontent.com/seanaasamavi/sticker/main/Pre-comp%202-1.webm" autoplay loop muted playsinline style="top: 2600px; left: 1200px; width: 350px;"></video>
 <video class="sticker-layer" src="https://raw.githubusercontent.com/seanaasamavi/sticker/main/Pre-comp%203-1.webm" autoplay loop muted playsinline style="top: 3600px; left: 20px; width: 350px;"></video>
 <video class="sticker-layer" src="https://uploadkon.ir/uploads/0b5715_26license.png" autoplay loop muted playsinline style="top: 772px; left: 138px; width: 400px;"></video>
+
+<!-- ✅ NEW STICKER  (position & scale via CSS variables) -->
+<video class="sticker-layer new-sticker"
+       src="https://raw.githubusercontent.com/seanaa-portfolio/portfolio/1868fd49f0166ff1dcbebbc8b64f8f5637c55130/3-1.webm"
+       autoplay loop muted playsinline
+       style="top: var(--stickerY); left: var(--stickerX); width: calc(350px * var(--stickerScale)); transform: translateX(-50%);"></video>
+
 <div class="wrap">
 <div class="header-placeholder"></div>
 </div>
+
 <!-- ✅ اسلایدر اول با آیکون click here -->
 <div class="slider-section" id="first-slider">
 <a href="#first-slider" class="slider-click-hint">
 <span class="hint-arrow">→</span>
 <span class="hint-text">click here</span>
 </a>
+
+<!-- ✅ TITLE 1 SVG  (child of this swiper section) -->
+<div class="swiper-title-wrapper">
+    <img class="swiper-title-svg"
+         src="https://raw.githubusercontent.com/seanaasamavi/svg/8f86a66cd0a8652b3af2e2b4e10f21de66e38767/motion.svg"
+         alt="Motion Graphics">
+</div>
+
 <div class="slider-mobile-title">MOTION GRAPHICS SAMPLE</div>
 <div class="swiper-frame">
 <div class="swiper-button-prev"></div>
@@ -489,8 +610,17 @@ width: calc(100% - 24px) !important;
 </div>
 </div>
 </div>
+
 <!-- ✅ اسلایدر دوم -->
 <div class="slider-section">
+
+<!-- ✅ TITLE 2 SVG  (child of this swiper section) -->
+<div class="swiper-title-wrapper">
+    <img class="swiper-title-svg"
+         src="https://raw.githubusercontent.com/seanaasamavi/svg/8f86a66cd0a8652b3af2e2b4e10f21de66e38767/animate.svg"
+         alt="Animation">
+</div>
+
 <div class="slider-mobile-title">ANIMATION SAMPLE</div>
 <div class="swiper-frame">
 <div class="swiper-button-prev"></div>
@@ -526,8 +656,17 @@ width: calc(100% - 24px) !important;
 </div>
 </div>
 </div>
+
 <!-- ✅ اسلایدر سوم -->
 <div class="slider-section">
+
+<!-- ✅ TITLE 3 SVG  (child of this swiper section) -->
+<div class="swiper-title-wrapper">
+    <img class="swiper-title-svg"
+         src="https://raw.githubusercontent.com/seanaasamavi/svg/8f86a66cd0a8652b3af2e2b4e10f21de66e38767/self.svg"
+         alt="Self & University Projects">
+</div>
+
 <div class="slider-mobile-title">SELF & UNIVERSITY PROJECT</div>
 <div class="swiper-frame image-slider">
 <div class="swiper-button-prev"></div>
@@ -587,8 +726,17 @@ width: calc(100% - 24px) !important;
 </div>
 </div>
 </div>
+
 <!-- ✅ اسلایدر چهارم -->
 <div class="slider-section">
+
+<!-- ✅ TITLE 4 SVG  (child of this swiper section) -->
+<div class="swiper-title-wrapper">
+    <img class="swiper-title-svg"
+         src="https://raw.githubusercontent.com/seanaasamavi/svg/8f86a66cd0a8652b3af2e2b4e10f21de66e38767/license.svg"
+         alt="Licenses & Certificates">
+</div>
+
 <div class="slider-mobile-title">LICENSE & CERTIFICATES</div>
 <div class="swiper-frame image-slider">
 <div class="swiper-button-prev"></div>
@@ -620,6 +768,7 @@ width: calc(100% - 24px) !important;
 </div>
 </div>
 </div>
+
 <!-- ✅ اطلاعات تماس -->
 <div class="contact-footer">
 <div class="contact-label">Get in Touch</div>
@@ -635,15 +784,16 @@ width: calc(100% - 24px) !important;
 </a>
 </div>
 </div>
+
 <!-- ✅ مودال ویدیو -->
 <div class="video-modal" id="videoModal">
 <div class="modal-video-container">
 <button class="close-modal" id="closeModal">×</button>
-<!-- ✅ FIX: Removed 'muted' attribute from HTML, handled dynamically in JS for better audio support -->
 <video id="modalVideo" controls playsinline></video>
 <div class="modal-title" id="modalTitle"></div>
 </div>
 </div>
+
 <!-- ✅ مودال تصویر -->
 <div class="image-modal" id="imageModal">
 <div class="modal-image-container">
@@ -657,6 +807,7 @@ width: calc(100% - 24px) !important;
 </div>
 </div>
 </div>
+
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 <script>
 document.addEventListener('DOMContentLoaded', () => {
@@ -785,7 +936,6 @@ translateY = 0;
 updateTransform();
 modalImage.style.cursor = 'zoom-in';
 imageModal.style.display = 'flex';
-// ✅ FIX: Robust Scroll Locking
 document.body.style.overflow = 'hidden';
 document.documentElement.style.overflow = 'hidden';
 setTimeout(() => { imageModal.classList.add('active'); }, 10);
@@ -795,10 +945,8 @@ if (src) {
 modalVideo.src = src;
 modalTitle.innerText = titleText || '';
 videoModal.style.display = 'flex';
-// ✅ FIX: Robust Scroll Locking
 document.body.style.overflow = 'hidden';
 document.documentElement.style.overflow = 'hidden';
-// ✅ FIX: Moved play() outside setTimeout to keep user gesture context for unmuted autoplay
 modalVideo.muted = false;
 const playPromise = modalVideo.play();
 if (playPromise !== undefined) {
@@ -818,7 +966,6 @@ videoModal.classList.add('active');
 function closeVideoModal() {
 videoModal.classList.remove('active');
 modalVideo.pause();
-// ✅ FIX: Restore Scroll
 document.body.style.overflow = '';
 document.documentElement.style.overflow = '';
 setTimeout(() => {
@@ -832,7 +979,6 @@ closeModalBtn.addEventListener('click', closeVideoModal);
 videoModal.addEventListener('click', (e) => { if (e.target === videoModal) closeVideoModal(); });
 function closeImageModalFunc() {
 imageModal.classList.remove('active');
-// ✅ FIX: Restore Scroll
 document.body.style.overflow = '';
 document.documentElement.style.overflow = '';
 setTimeout(() => {
