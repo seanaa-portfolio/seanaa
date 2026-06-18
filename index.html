@@ -11,40 +11,106 @@
 /* ========================================== */
 :root {
   /* Name SVG Configuration */
-  --name-width: 250px;
+  --name-width: 450px;
   --name-height: auto;
-  --name-tx: 0px;
-  --name-ty: 0px;
+  --name-tx: 40px;
+  --name-ty: -162px;
+  --name-scale: 1;
+  --name-rotate: 0deg;
 
   /* Welcome SVG Configuration */
-  --welcome-width: 450px;
+  --welcome-width: 1000px;
   --welcome-height: auto;
   --welcome-tx: 0px;
-  --welcome-ty: 0px;
+  --welcome-ty: 700px;
+  --welcome-scale: 1;
+  --welcome-rotate: 0deg;
 
-  /* Title 1: Motion Graphics Configuration */
-  --title1-width: 350px;
+  /* ========================================== */
+  /* ✅ Master Layout Architecture              */
+  /* ========================================== */
+  /* Title 1 & Swiper 1 define the master layout */
+  
+  --master-title-width: 500px;
+  --master-title-tx: 0px;
+  --master-title-ty: -400px;
+  
+  --master-swiper-width: 100%;
+  --master-swiper-max-width: 960px;
+  --master-swiper-tx: 0px;
+  --master-swiper-ty: 0px;
+
+  /* ========================================== */
+  /* ✅ Independent Title Controls              */
+  /* ========================================== */
+  
+  /* Title 1: Motion Graphics */
+  --title1-width: var(--master-title-width);
   --title1-height: auto;
-  --title1-tx: 0px;
-  --title1-ty: -140px;
+  --title1-tx: var(--master-title-tx);
+  --title1-ty: var(--master-title-ty);
+  --title1-scale: 1;
+  --title1-rotate: 0deg;
 
-  /* Title 2: Animation Configuration */
-  --title2-width: 350px;
+  /* Title 2: Animation */
+  --title2-width: var(--master-title-width);
   --title2-height: auto;
-  --title2-tx: 0px;
-  --title2-ty: -140px;
+  --title2-tx: var(--master-title-tx);
+  --title2-ty: var(--master-title-ty);
+  --title2-scale: 1;
+  --title2-rotate: 0deg;
 
-  /* Title 3: Self & University Configuration */
-  --title3-width: 350px;
+  /* Title 3: Self & University */
+  --title3-width: var(--master-title-width);
   --title3-height: auto;
-  --title3-tx: 0px;
-  --title3-ty: -140px;
+  --title3-tx: var(--master-title-tx);
+  --title3-ty: var(--master-title-ty);
+  --title3-scale: 1;
+  --title3-rotate: 0deg;
 
-  /* Title 4: License & Certificates Configuration */
-  --title4-width: 350px;
+  /* Title 4: License & Certificates */
+  --title4-width: var(--master-title-width);
   --title4-height: auto;
-  --title4-tx: 0px;
-  --title4-ty: -140px;
+  --title4-tx: var(--master-title-tx);
+  --title4-ty: var(--master-title-ty);
+  --title4-scale: 1;
+  --title4-rotate: 0deg;
+
+  /* ========================================== */
+  /* ✅ Independent Swiper Controls             */
+  /* ========================================== */
+
+  /* Swiper 1 */
+  --swiper1-width: var(--master-swiper-width);
+  --swiper1-max-width: var(--master-swiper-max-width);
+  --swiper1-tx: var(--master-swiper-tx);
+  --swiper1-ty: var(--master-swiper-ty);
+  --swiper1-scale: 1;
+  --swiper1-rotate: 0deg;
+
+  /* Swiper 2 */
+  --swiper2-width: var(--master-swiper-width);
+  --swiper2-max-width: var(--master-swiper-max-width);
+  --swiper2-tx: var(--master-swiper-tx);
+  --swiper2-ty: var(--master-swiper-ty);
+  --swiper2-scale: 1;
+  --swiper2-rotate: 0deg;
+
+  /* Swiper 3 */
+  --swiper3-width: var(--master-swiper-width);
+  --swiper3-max-width: var(--master-swiper-max-width);
+  --swiper3-tx: var(--master-swiper-tx);
+  --swiper3-ty: var(--master-swiper-ty);
+  --swiper3-scale: 1;
+  --swiper3-rotate: 0deg;
+
+  /* Swiper 4 */
+  --swiper4-width: var(--master-swiper-width);
+  --swiper4-max-width: var(--master-swiper-max-width);
+  --swiper4-tx: var(--master-swiper-tx);
+  --swiper4-ty: var(--master-swiper-ty);
+  --swiper4-scale: 1;
+  --swiper4-rotate: 0deg;
 }
 
 /* فونت‌ها */
@@ -105,22 +171,27 @@ overflow-x: hidden;
 overflow-y: auto;
 }
 details, main { display: block; }
-h1 { font-size: 2em; margin: .67em 0; }
+h1 { font-size: 2em; margin: .67em 0;
+}
 hr { box-sizing: content-box; height: 0;
 overflow: visible; }
-code, kbd, pre, samp { font-family: sina; font-size: 1em; }
+code, kbd, pre, samp { font-family: sina; font-size: 1em;
+}
 a { background-color: transparent; }
 abbr[title] { border-bottom: none;
 text-decoration: underline dotted; }
 b, strong { font-weight: bolder; }
-small { font-size: 80%; }
+small { font-size: 80%;
+}
 sub, sup { font-size: 75%; line-height: 0;
 position: relative; vertical-align: baseline; }
 sub { bottom: -.25em; }
-sup { top: -.5em; }
+sup { top: -.5em;
+}
 img { border-style: none;
 }
-button, input, optgroup, select, textarea { font-family: sina; font-size: 100%; line-height: 1.15; margin: 0; }
+button, input, optgroup, select, textarea { font-family: sina; font-size: 100%; line-height: 1.15; margin: 0;
+}
 button, input { overflow: visible;
 }
 button, select { text-transform: none; }
@@ -182,14 +253,14 @@ object-fit: contain;
   right: 50px;
   width: var(--name-width);
   height: var(--name-height);
-  transform: translate(var(--name-tx), var(--name-ty));
+  transform: translate(var(--name-tx), var(--name-ty)) scale(var(--name-scale)) rotate(var(--name-rotate));
 }
 .welcome-svg-overlay {
   top: 250px;
   left: 50%;
   width: var(--welcome-width);
   height: var(--welcome-height);
-  transform: translate(calc(-50% + var(--welcome-tx)), var(--welcome-ty));
+  transform: translate(calc(-50% + var(--welcome-tx)), var(--welcome-ty)) scale(var(--welcome-scale)) rotate(var(--welcome-rotate));
 }
 .title-svg-overlay {
   left: 50%;
@@ -198,22 +269,53 @@ object-fit: contain;
 .title-1-overlay {
   width: var(--title1-width);
   height: var(--title1-height);
-  transform: translate(calc(-50% + var(--title1-tx)), var(--title1-ty));
+  transform: translate(calc(-50% + var(--title1-tx)), var(--title1-ty)) scale(var(--title1-scale)) rotate(var(--title1-rotate));
 }
 .title-2-overlay {
   width: var(--title2-width);
   height: var(--title2-height);
-  transform: translate(calc(-50% + var(--title2-tx)), var(--title2-ty));
+  transform: translate(calc(-50% + var(--title2-tx)), var(--title2-ty)) scale(var(--title2-scale)) rotate(var(--title2-rotate));
 }
 .title-3-overlay {
   width: var(--title3-width);
   height: var(--title3-height);
-  transform: translate(calc(-50% + var(--title3-tx)), var(--title3-ty));
+  transform: translate(calc(-50% + var(--title3-tx)), var(--title3-ty)) scale(var(--title3-scale)) rotate(var(--title3-rotate));
 }
 .title-4-overlay {
   width: var(--title4-width);
   height: var(--title4-height);
-  transform: translate(calc(-50% + var(--title4-tx)), var(--title4-ty));
+  transform: translate(calc(-50% + var(--title4-tx)), var(--title4-ty)) scale(var(--title4-scale)) rotate(var(--title4-rotate));
+}
+
+/* ========================================== */
+/* ✅ Independent Layout Overrides (via :has) */
+/* ========================================== */
+.slider-section:has(.title-1-overlay) .swiper-frame {
+  width: var(--swiper1-width);
+  max-width: var(--swiper1-max-width) !important;
+  transform: translate(var(--swiper1-tx), var(--swiper1-ty)) scale(var(--swiper1-scale)) rotate(var(--swiper1-rotate));
+}
+.slider-section:has(.title-1-overlay) .slider-click-hint {
+  margin-left: var(--swiper1-tx);
+  margin-top: var(--swiper1-ty);
+}
+
+.slider-section:has(.title-2-overlay) .swiper-frame {
+  width: var(--swiper2-width);
+  max-width: var(--swiper2-max-width) !important;
+  transform: translate(var(--swiper2-tx), var(--swiper2-ty)) scale(var(--swiper2-scale)) rotate(var(--swiper2-rotate));
+}
+
+.slider-section:has(.title-3-overlay) .swiper-frame {
+  width: var(--swiper3-width);
+  max-width: var(--swiper3-max-width) !important;
+  transform: translate(var(--swiper3-tx), var(--swiper3-ty)) scale(var(--swiper3-scale)) rotate(var(--swiper3-rotate));
+}
+
+.slider-section:has(.title-4-overlay) .swiper-frame {
+  width: var(--swiper4-width);
+  max-width: var(--swiper4-max-width) !important;
+  transform: translate(var(--swiper4-tx), var(--swiper4-ty)) scale(var(--swiper4-scale)) rotate(var(--swiper4-rotate));
 }
 
 /* ========================================== */
@@ -230,7 +332,8 @@ margin-bottom: 10px;
 @media screen and (max-width: 768px) {
 .slider-section { margin-bottom: 150px;
 }
-.slider-section:last-of-type { margin-bottom: 10px; }
+.slider-section:last-of-type { margin-bottom: 10px;
+}
 }
 /* ========================================== */
 /* ✅ آیکون "click here" */
@@ -273,13 +376,15 @@ filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));
 @keyframes bounceRight {
 0%, 100% { transform: translateX(0);
 }
-50% { transform: translateX(8px); }
+50% { transform: translateX(8px);
+}
 }
 @media screen and (max-width: 1100px) {
 .slider-click-hint { left: -95px; }
 .slider-click-hint .hint-text { font-size: 12px;
 }
-.slider-click-hint .hint-arrow { font-size: 28px; }
+.slider-click-hint .hint-arrow { font-size: 28px;
+}
 }
 @media screen and (max-width: 900px) {
 .slider-click-hint { display: none;
@@ -478,7 +583,8 @@ height: 18px !important; stroke-width: 3px !important; }
 margin: 0 5px !important; }
 .swiper-pagination-bullet-active { width: 20px !important; }
 /* ✅ Hide Custom Desktop SVGs on Mobile */
-.desktop-svg-overlay { display: none !important; }
+.desktop-svg-overlay { display: none !important;
+}
 }
 /* ========================================== */
 /* ✅ تغییرات اختصاصی موبایل (اندروید و iOS) */
@@ -504,6 +610,10 @@ height: auto !important;
 aspect-ratio: 16 / 9 !important;
 margin: 0 auto !important;
 border-radius: 16px !important;
+transform: none !important; /* Protects mobile responsive stacking */
+}
+.slider-click-hint {
+margin: 0 !important; /* Resets positional margin injected for desktop tracking */
 }
 .sticker-layer {
 display: none !important;
@@ -563,8 +673,10 @@ width: calc(100% - 24px) !important;
 
 <video class="sticker-layer" src="https://raw.githubusercontent.com/seanaasamavi/sticker/main/Pre-comp%201-1.webm" autoplay loop muted playsinline style="top: 5200px; left: 1030px; width: 500px;"></video>
 <video class="sticker-layer" src="https://raw.githubusercontent.com/seanaasamavi/sticker/main/Pre-comp%202-1.webm" autoplay loop muted playsinline style="top: 2600px; left: 1200px; width: 350px;"></video>
-<video class="sticker-layer" src="https://raw.githubusercontent.com/seanaasamavi/sticker/main/Pre-comp%203-1.webm" autoplay loop muted playsinline style="top: 3600px; left: 20px; width: 350px;"></video>
-<video class="sticker-layer" src="https://uploadkon.ir/uploads/0b5715_26license.png" autoplay loop muted playsinline style="top: 772px; left: 138px; width: 400px;"></video>
+<video class="sticker-layer" src="https://raw.githubusercontent.com/seanaasamavi/sticker/main/Pre-comp%203-1.webm" autoplay loop muted playsinline style="top: 3600px;
+left: 20px; width: 350px;"></video>
+<video class="sticker-layer" src="https://uploadkon.ir/uploads/0b5715_26license.png" autoplay loop muted playsinline style="top: 772px; left: 138px;
+width: 400px;"></video>
 <div class="wrap">
 <div class="header-placeholder"></div>
 </div>
@@ -590,7 +702,8 @@ width: calc(100% - 24px) !important;
 <div class="slide-text"><h3>پلان هایی از پروژه موشن گرافیک شرکت هوشمند سپهر</h3></div>
 </div>
 <div class="swiper-slide" data-src="https://raw.githubusercontent.com/seanaasamavi/after-effect/main/03-1.mp4" data-title="پلان هایی از پروژه موشن گرافیک شرکت هوشمند سپهر">
-<video class="slide-media" muted playsinline autoplay preload="metadata" loop><source src="https://raw.githubusercontent.com/seanaasamavi/after-effect/main/03-1.mp4" type="video/mp4"></video>
+<video class="slide-media" muted playsinline autoplay preload="metadata" loop><source 
+src="https://raw.githubusercontent.com/seanaasamavi/after-effect/main/03-1.mp4" type="video/mp4"></video>
 <div class="slide-text"><h3>پلان هایی از پروژه موشن گرافیک شرکت هوشمند سپهر</h3></div>
 </div>
 <div class="swiper-slide" data-src="https://raw.githubusercontent.com/seanaasamavi/after-effect/main/12-1.mp4" data-title="پلان هایی از پروژه موشن‌گرافیک شرکت هوشمند سپهر">
@@ -606,7 +719,8 @@ width: calc(100% - 24px) !important;
 <div class="slide-text"><h3>پلان تستی انیمت کارکتر 2D</h3></div>
 </div>
 <div class="swiper-slide" data-src="https://raw.githubusercontent.com/seanaasamavi/after-effect/main/06-1.mp4" data-title="پروژه تست تکسچر سازی شیشه cinema 4D">
-<video class="slide-media" muted playsinline autoplay preload="metadata" loop><source src="https://raw.githubusercontent.com/seanaasamavi/after-effect/main/06-1.mp4" type="video/mp4"></video>
+<video class="slide-media" muted playsinline autoplay preload="metadata" loop><source 
+src="https://raw.githubusercontent.com/seanaasamavi/after-effect/main/06-1.mp4" type="video/mp4"></video>
 <div class="slide-text"><h3>پروژه تست تکسچر سازی شیشه cinema 4D</h3></div>
 </div>
 <div class="swiper-slide" data-src="https://raw.githubusercontent.com/seanaasamavi/after-effect/main/05-1.mp4" data-title="سفارش پروژه دانشجو">
@@ -635,7 +749,8 @@ width: calc(100% - 24px) !important;
 <img class="desktop-svg-overlay title-svg-overlay title-2-overlay" src="https://raw.githubusercontent.com/seanaasamavi/svg/8f86a66cd0a8652b3af2e2b4e10f21de66e38767/animate.svg" alt="Animation Title">
 <div class="slider-mobile-title">ANIMATION SAMPLE</div>
 <div class="swiper-frame">
-<div class="swiper-button-prev"></div>
+<div 
+class="swiper-button-prev"></div>
 <div class="swiper-button-next"></div>
 <div class="swiper blogix-swiper">
 <div class="swiper-wrapper">
@@ -657,7 +772,8 @@ width: calc(100% - 24px) !important;
 </div>
 <div class="swiper-slide" data-src="https://raw.githubusercontent.com/seanaasamavi/moho/main/05-1.mp4" data-title="جان‌بخشی و انیمیت پرش و نشست">
 <video class="slide-media" muted playsinline autoplay preload="metadata" loop><source src="https://raw.githubusercontent.com/seanaasamavi/moho/main/05-1.mp4" type="video/mp4"></video>
-<div class="slide-text"><h3>جان‌بخشی و انیمیت پرش و نشست</h3></div>
+<div class="slide-text"><h3>جان‌بخشی و انیمیت 
+پرش و نشست</h3></div>
 </div>
 <div class="swiper-slide" data-src="https://raw.githubusercontent.com/seanaasamavi/moho/main/06-1.mp4" data-title="جان‌بخشی و انیمیت لیپ سینک">
 <video class="slide-media" muted playsinline autoplay preload="metadata" loop><source src="https://raw.githubusercontent.com/seanaasamavi/moho/main/06-1.mp4" type="video/mp4"></video>
@@ -687,7 +803,8 @@ width: calc(100% - 24px) !important;
 </div>
 <div class="swiper-slide" data-src="https://uploadkon.ir/uploads/73f607_2606.jpg" data-title="پروژه دانشگاهی فتو مونتاژ">
 <img class="slide-media" src="https://uploadkon.ir/uploads/73f607_2606.jpg" alt="پروژه دانشگاهی فتو مونتاژ">
-<div class="slide-text"><h3>پروژه دانشگاهی فتو مونتاژ</h3></div>
+<div class="slide-text"><h3>پروژه دانشگاهی 
+فتو مونتاژ</h3></div>
 </div>
 <div class="swiper-slide" data-src="https://uploadkon.ir/uploads/707307_2601.jpg" data-title="پروژه دانشگاهی طراحی پوستر">
 <img class="slide-media" src="https://uploadkon.ir/uploads/707307_2601.jpg" alt="پروژه دانشگاهی طراحی پوستر">
@@ -709,7 +826,8 @@ width: calc(100% - 24px) !important;
 <img class="slide-media" src="https://uploadkon.ir/uploads/bbab07_2604.jpg" alt="پروژه دانشگاهی تایپوگرافی توربو">
 <div class="slide-text"><h3>پروژه دانشگاهی تایپوگرافی توربو</h3></div>
 </div>
-<div class="swiper-slide" data-src="https://uploadkon.ir/uploads/6b8607_2609.jpg" data-title="پروژه شخصی طراحی تابلو دکوراتیو">
+<div class="swiper-slide" data-src="https://uploadkon.ir/uploads/6b8607_2609.jpg" data-title="پروژه شخصی طراحی تابلو 
+دکوراتیو">
 <img class="slide-media" src="https://uploadkon.ir/uploads/6b8607_2609.jpg" alt="پروژه شخصی طراحی تابلو دکوراتیو">
 <div class="slide-text"><h3>پروژه شخصی طراحی تابلو دکوراتیو</h3></div>
 </div>
@@ -740,7 +858,8 @@ width: calc(100% - 24px) !important;
 <div class="swiper blogix-swiper">
 <div class="swiper-wrapper">
 <div class="swiper-slide" data-src="https://uploadkon.ir/uploads/ca7707_2601.jpg" data-title="گواهی نرم‌افزار ایلوستریتور و فتوشاپ">
-<img class="slide-media" src="https://uploadkon.ir/uploads/ca7707_2601.jpg" alt="گواهی نرم‌افزار ایلوستریتور و فتوشاپ">
+<img class="slide-media" src="https://uploadkon.ir/uploads/ca7707_2601.jpg" alt="گواهی نرم‌افزار ایلوستریتور 
+و فتوشاپ">
 <div class="slide-text"><h3>گواهی نرم‌افزار ایلوستریتور و فتوشاپ</h3></div>
 </div>
 <div class="swiper-slide" data-src="https://uploadkon.ir/uploads/fc6307_2602.jpg" data-title="گواهی نمایشگاه نقاشی کوشک باغ هنر">
@@ -767,14 +886,16 @@ width: calc(100% - 24px) !important;
 
 <div class="contact-footer">
 <div class="contact-label">Get in Touch</div>
-<div class="contact-row">
+<div 
+class="contact-row">
 <a href="tel:+989022293471">
 <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
 <span>09022293471</span>
 </a>
 <span class="separator">|</span>
 <a href="https://mail.google.com/mail/?view=cm&fs=1&to=seanaa.samavi@gmail.com" target="_blank" rel="noopener noreferrer">
-<svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+<svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 
+2,6"></polyline></svg>
 <span>seanaa.samavi@gmail.com</span>
 </a>
 </div>
@@ -804,7 +925,8 @@ width: calc(100% - 24px) !important;
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 <script>
 document.addEventListener('DOMContentLoaded', () => {
-const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+const isTouchDevice = 'ontouchstart' in window ||
+navigator.maxTouchPoints > 0;
 if (!isTouchDevice) {
 document.querySelectorAll('.slide-media').forEach(media => {
 if (media.tagName === 'VIDEO') {
