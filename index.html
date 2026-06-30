@@ -10,19 +10,23 @@
 /* ✅ SVG Overlay Variables (Desktop Only)    */
 /* ========================================== */
 :root {
+  /* ✅ Smart Responsive Scaling System (Desktop Only) */
+  --ref: 1920;
+  --scale: 1;
+
   /* Name SVG Configuration */
-  --name-width: 450px;
+  --name-width: calc(450px * var(--scale));
   --name-height: auto;
-  --name-tx: 40px;
-  --name-ty: -162px;
+  --name-tx: calc(40px * var(--scale));
+  --name-ty: calc(-162px * var(--scale));
   --name-scale: 1;
   --name-rotate: 0deg;
 
   /* Welcome SVG Configuration */
-  --welcome-width: 1100px;
+  --welcome-width: calc(1100px * var(--scale));
   --welcome-height: auto;
-  --welcome-tx: 0px;
-  --welcome-ty: 700px;
+  --welcome-tx: calc(0px * var(--scale));
+  --welcome-ty: calc(700px * var(--scale));
   --welcome-scale: 1;
   --welcome-rotate: 0deg;
 
@@ -31,14 +35,14 @@
   /* ========================================== */
   /* Title 1 & Swiper 1 define the master layout */
   
-  --master-title-width: 700px;
-  --master-title-tx: 0px;
-  --master-title-ty: -465px;
+  --master-title-width: calc(700px * var(--scale));
+  --master-title-tx: calc(0px * var(--scale));
+  --master-title-ty: calc(-465px * var(--scale));
   
   --master-swiper-width: 100%;
-  --master-swiper-max-width: 960px;
-  --master-swiper-tx: 0px;
-  --master-swiper-ty: -50px;
+  --master-swiper-max-width: calc(960px * var(--scale));
+  --master-swiper-tx: calc(0px * var(--scale));
+  --master-swiper-ty: calc(-50px * var(--scale));
   /* ========================================== */
   /* ✅ Independent Title Controls              */
   /* ========================================== */
@@ -110,7 +114,23 @@
   --swiper4-ty: var(--master-swiper-ty);
   --swiper4-scale: 1;
   --swiper4-rotate: 0deg;
+  --m-scale: 1;
 }
+
+/* ✅ Activate Scaling Engine ONLY on Desktop / Laptop / Large screens */
+@media (min-width: 1025px) {
+  :root {
+    --scale: calc(100vw / (var(--ref) * 1px));
+  }
+}
+
+/* ✅ Activate Scaling Engine on Mobile / Tablet */
+@media (max-width: 1024px) {
+  :root {
+    --m-scale: calc(100vw / 412px);
+  }
+}
+
 
 /* فونت‌ها */
 @font-face {
@@ -162,7 +182,7 @@ background-repeat: no-repeat;
 -webkit-backface-visibility: hidden;
 backface-visibility: hidden;
 /* ❌ FIX: Removed transform: translateZ(0) to prevent breaking position: fixed modals */
-min-height: 5800px;
+min-height: calc(5800px * var(--scale));
 }
 html, body {
 max-width: 100%;
@@ -197,7 +217,7 @@ button, select { text-transform: none; }
 [type=button], [type=reset], [type=submit], button { appearance: button; -webkit-appearance: button;
 }
 [type=button]::-moz-focus-inner, [type=reset]::-moz-focus-inner, [type=submit]::-moz-focus-inner, button::-moz-focus-inner { border-style: none; padding: 0; }
-[type=button]:-moz-focusring, [type=reset]:-moz-focusring, [type=submit]:-moz-focusring, button:-moz-focusring { outline: 1px dotted ButtonText;
+[type=button]:-moz-focusring, [type=reset]:-moz-focusring, [type=submit]:-moz-focusring, button:-moz-focusring { outline: calc(1px * var(--scale)) dotted ButtonText;
 }
 fieldset { padding: .35em .75em .625em; }
 legend { color: inherit; display: table; max-width: 100%; white-space: normal; }
@@ -207,7 +227,7 @@ textarea { overflow: auto; }
 [type=checkbox], [type=radio], legend { box-sizing: border-box; padding: 0; }
 [type=number]::-webkit-inner-spin-button, [type=number]::-webkit-outer-spin-button { height: auto;
 }
-[type=search] { appearance: textfield; -webkit-appearance: textfield; outline-offset: -2px; }
+[type=search] { appearance: textfield; -webkit-appearance: textfield; outline-offset: calc(-2px * var(--scale)); }
 [type=search]::-webkit-search-decoration { -webkit-appearance: none; }
 ::-webkit-file-upload-button { -webkit-appearance: button; font: inherit;
 }
@@ -216,16 +236,16 @@ summary { display: list-item; }
 * { box-sizing: border-box; }
 img { max-width: 100%; height: auto;
 display: block; }
-.wrap { width: 100%; max-width: 992px; padding-right: 15px; padding-left: 15px; margin-left: auto; margin-right: auto; }
+.wrap { width: 100%; max-width: calc(992px * var(--scale)); padding-right: calc(15px * var(--scale)); padding-left: calc(15px * var(--scale)); margin-left: auto; margin-right: auto; }
 a { color: #626b7f;
 text-decoration: none; }
 a:hover { color: #a3aab8; }
 .header-placeholder {
-padding: 997px 15px;
-margin-bottom: 60px;
+padding: calc(997px * var(--scale)) calc(15px * var(--scale));
+margin-bottom: calc(60px * var(--scale));
 background: transparent;
-border-radius: 30px;
-min-height: 270px;
+border-radius: calc(30px * var(--scale));
+min-height: calc(270px * var(--scale));
 }
 .sticker-layer {
 position: absolute !important;
@@ -248,14 +268,14 @@ object-fit: contain;
   pointer-events: none; /* Prevents blocking clicks underneath */
 }
 .name-svg-overlay {
-  top: 50px;
-  right: 50px;
+  top: calc(50px * var(--scale));
+  right: calc(50px * var(--scale));
   width: var(--name-width);
   height: var(--name-height);
   transform: translate(var(--name-tx), var(--name-ty)) scale(var(--name-scale)) rotate(var(--name-rotate));
 }
 .welcome-svg-overlay {
-  top: 250px;
+  top: calc(250px * var(--scale));
   left: 50%;
   width: var(--welcome-width);
   height: var(--welcome-height);
@@ -323,29 +343,24 @@ object-fit: contain;
 .slider-section {
 position: relative;
 overflow: visible !important;
-margin-bottom: 396px;
+margin-bottom: calc(396px * var(--scale));
 }
 .slider-section:last-of-type {
-margin-bottom: 10px;
+margin-bottom: calc(10px * var(--scale));
 }
-@media screen and (max-width: 768px) {
-.slider-section { margin-bottom: 150px;
-}
-.slider-section:last-of-type { margin-bottom: 10px;
-}
-}
+
 /* ========================================== */
 /* ✅ آیکون "click here" */
 /* ========================================== */
 .slider-click-hint {
 position: absolute;
-left: 195px;
+left: calc(200px * var(--scale));
 top: 54%;
 transform: translateY(-50%);
 display: flex;
 flex-direction: column;
 align-items: center;
-gap: 5px;
+gap: calc(5px * var(--scale));
 cursor: pointer;
 z-index: 100;
 text-decoration: none !important;
@@ -356,26 +371,26 @@ pointer-events: none !important;
 transform: translateY(-50%) scale(1.1);
 }
 .slider-click-hint .hint-arrow {
-font-size: 30px;
+font-size: calc(30px * var(--scale));
 color: #cdd4d9;
 animation: bounceRight 1.5s infinite;
 line-height: 1;
-filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));
+filter: drop-shadow(0 calc(2px * var(--scale)) calc(4px * var(--scale)) rgba(0,0,0,0.3));
 }
 .slider-click-hint .hint-text {
 font-family: 'Unigeo64', sina;
-font-size: 20px;
+font-size: calc(20px * var(--scale));
 color: #cdd4d9;
-letter-spacing: 2px;
+letter-spacing: calc(2px * var(--scale));
 white-space: nowrap;
 text-transform: uppercase;
 font-weight: bold;
-filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));
+filter: drop-shadow(0 calc(2px * var(--scale)) calc(4px * var(--scale)) rgba(0,0,0,0.3));
 }
 @keyframes bounceRight {
 0%, 100% { transform: translateX(0);
 }
-50% { transform: translateX(8px);
+50% { transform: translateX(calc(8px * var(--scale)));
 }
 }
 @media screen and (max-width: 1100px) {
@@ -394,9 +409,9 @@ filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));
 /* ========================================== */
 .contact-footer {
 text-align: center;
-padding: 20px 20px 30px;
-margin-top: -380px;
-margin-bottom: 40px;
+padding: calc(20px * var(--scale)) calc(20px * var(--scale)) calc(30px * var(--scale));
+margin-top: calc(-380px * var(--scale));
+margin-bottom: calc(40px * var(--scale));
 font-family: 'Tarik', sans-serif;
 color: #cdd4d9;
 position: relative;
@@ -404,44 +419,44 @@ z-index: 10;
 }
 .contact-footer .contact-label {
 font-family: 'Unigeo64', sans-serif;
-font-size: 14px;
-letter-spacing: 4px;
+font-size: calc(14px * var(--scale));
+letter-spacing: calc(4px * var(--scale));
 text-transform: uppercase;
 opacity: 0.6;
-margin-bottom: 20px;
+margin-bottom: calc(20px * var(--scale));
 color: #cdd4d9;
 }
 .contact-footer .contact-row {
 display: flex;
 justify-content: center;
 align-items: center;
-gap: 20px;
+gap: calc(20px * var(--scale));
 flex-wrap: wrap;
 }
 .contact-footer a {
 color: #cdd4d9;
 text-decoration: none;
 transition: all 0.3s ease;
-padding: 12px 26px;
-border: 1.5px solid rgba(205, 212, 217, 0.35);
-border-radius: 12px;
+padding: calc(12px * var(--scale)) calc(26px * var(--scale));
+border: calc(1.5px * var(--scale)) solid rgba(205, 212, 217, 0.35);
+border-radius: calc(12px * var(--scale));
 font-family: 'Tarik', sans-serif;
 display: inline-flex;
 align-items: center;
-gap: 12px;
-font-size: 16px;
+gap: calc(12px * var(--scale));
+font-size: calc(16px * var(--scale));
 background: rgba(205, 212, 217, 0.03);
-backdrop-filter: blur(4px);
+backdrop-filter: blur(calc(4px * var(--scale)));
 }
 .contact-footer a:hover {
 background: rgba(205, 212, 217, 0.12);
 border-color: rgba(205, 212, 217, 0.6);
-transform: translateY(-3px);
-box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+transform: translateY(calc(-3px * var(--scale)));
+box-shadow: 0 calc(6px * var(--scale)) calc(15px * var(--scale)) rgba(0,0,0,0.15);
 }
 .contact-footer a svg {
-width: 20px;
-height: 20px;
+width: calc(20px * var(--scale));
+height: calc(20px * var(--scale));
 stroke: #cdd4d9;
 fill: none;
 stroke-width: 2;
@@ -451,84 +466,61 @@ flex-shrink: 0;
 }
 .contact-footer .separator {
 color: rgba(205, 212, 217, 0.3);
-font-size: 20px;
+font-size: calc(20px * var(--scale));
 font-weight: 300;
 }
-@media screen and (max-width: 600px) {
-.contact-footer {
-margin-top: -150px;
-padding: 15px 10px 25px;
-}
-.contact-footer .contact-row {
-flex-direction: column;
-gap: 14px;
-}
-.contact-footer .separator {
-display: none;
-}
-.contact-footer a {
-font-size: 15px;
-padding: 10px 20px;
-width: 100%;
-max-width: 300px;
-justify-content: center;
-}
-.contact-footer a svg {
-width: 18px;
-height: 18px;
-}
-}
+
 /* ========================================== */
 /* ✅ استایل‌های اسلایدر و مودال */
 /* ========================================== */
-:root { --slider-height: 540px; }
+:root { --slider-height: calc(540px * var(--scale)); }
 .swiper-frame {
 position: relative;
 width: 100%;
-max-width: 960px;
+max-width: calc(960px * var(--scale));
 height: var(--slider-height);
 aspect-ratio: 16 / 9;
 margin: 0 auto;
-border-radius: 20px;
+border-radius: calc(20px * var(--scale));
 overflow: hidden;
-box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+box-shadow: 0 calc(10px * var(--scale)) calc(30px * var(--scale)) rgba(0,0,0,0.25);
 background: #000;
---swiper-navigation-size: 50px;
+--swiper-navigation-size: calc(50px * var(--scale));
 --swiper-navigation-color: #fff;
 }
-.blogix-swiper { width: 100%; height: 100%; direction: ltr !important; border-radius: 20px; overflow: hidden;
+.blogix-swiper { width: 100%; height: 100%; direction: ltr !important; border-radius: calc(20px * var(--scale)); overflow: hidden;
 }
 .swiper-wrapper { direction: ltr !important; }
 .swiper-slide { width: 100% !important; height: 100% !important; position: relative; overflow: hidden; cursor: pointer;
 background-color: #111; }
 .slide-media { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: 1;
 transition: transform 0.4s ease; transform: scale(1); }
-.slide-text { position: absolute; bottom: 37px; left: 20px; right: 20px; padding: 16px 20px;
-background: rgba(0,0,0,0.30); backdrop-filter: blur(3px); border-radius: 20px; color: #fff; z-index: 2; transform: translateY(0); opacity: 1; transition: all 0.4s ease; text-align: right;
+.slide-text { position: absolute; bottom: calc(37px * var(--scale)); left: calc(20px * var(--scale)); right: calc(20px * var(--scale)); padding: calc(16px * var(--scale)) calc(20px * var(--scale));
+background: rgba(0,0,0,0.30); backdrop-filter: blur(calc(3px * var(--scale))); border-radius: calc(20px * var(--scale)); color: #fff; z-index: 2; transform: translateY(0); opacity: 1; transition: all 0.4s ease; text-align: right;
 direction: rtl !important; font-family: 'Tarik', sans-serif; pointer-events: none; }
-.slide-text h3 { margin: 0; font-size: 20px; line-height: 1.6; white-space: nowrap;
+.slide-text h3 { margin: 0; font-size: calc(20px * var(--scale)); line-height: 1.6; white-space: nowrap;
 overflow: hidden; text-overflow: ellipsis; }
 @media (hover: hover) {
 .swiper-slide:hover .slide-media { transform: scale(1.05); }
-.swiper-slide:hover .slide-text { transform: translateY(-5px); background: rgba(0,0,0,0.85);
+.swiper-slide:hover .slide-text { transform: translateY(calc(-5px * var(--scale))); background: rgba(0,0,0,0.85);
 }
 }
-.swiper-button-prev, .swiper-button-next { background: rgba(0, 0, 0, 0.30); border-radius: 25%; backdrop-filter: blur(3px); z-index: 50; transition: all 0.3s ease; top: 50%;
-width: calc(var(--swiper-navigation-size) / 40 * 40) !important; height: calc(var(--swiper-navigation-size) / 40 * 40) !important; box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+.swiper-button-prev, .swiper-button-next { background: rgba(0, 0, 0, 0.30); border-radius: 25%; backdrop-filter: blur(calc(3px * var(--scale))); z-index: 50; transition: all 0.3s ease; top: 50%;
+width: calc(var(--swiper-navigation-size) / 40 * 40) !important; height: calc(var(--swiper-navigation-size) / 40 * 40) !important; box-shadow: 0 calc(4px * var(--scale)) calc(12px * var(--scale)) rgba(0,0,0,0.3);
 }
-.swiper-button-prev { left: 15px !important; right: auto !important; }
-.swiper-button-next { right: 15px !important; left: auto !important;
+.swiper-button-prev { left: calc(15px * var(--scale)) !important; right: auto !important; }
+.swiper-button-next { right: calc(15px * var(--scale)) !important; left: auto !important;
 }
 .swiper-button-prev:hover, .swiper-button-next:hover { background: rgba(0,0,0,0.85); transform: scale(1.1); }
-.swiper-button-prev::after, .swiper-button-next::after { font-size: 24px !important; font-weight: 900 !important;
+.swiper-button-prev::after, .swiper-button-next::after { font-size: calc(24px * var(--scale)) !important; font-weight: 900 !important;
 }
-.swiper-button-prev svg, .swiper-button-next svg { width: 24px !important; height: 24px !important; stroke-width: 4px !important; }
-.swiper-pagination { bottom: 15px !important;
+.swiper-button-prev svg, .swiper-button-next svg { width: calc(24px * var(--scale)) !important; height: calc(24px * var(--scale)) !important; stroke-width: calc(4px * var(--scale)) !important; }
+.swiper-pagination { bottom: calc(15px * var(--scale)) !important;
 z-index: 50 !important; display: flex; flex-direction: row; justify-content: center; }
-.swiper-pagination-bullet { width: 8px !important; height: 8px !important; background: rgba(255,255,255,0.5) !important;
-opacity: 1 !important; margin: 0 6px !important; transition: all 0.3s ease !important; }
-.swiper-pagination-bullet-active { width: 24px !important; background: #ffffff !important;
-border-radius: 999px !important; }
+.swiper-pagination-bullet { width: calc(8px * var(--scale)) !important; height: calc(8px * var(--scale)) !important; background: rgba(255,255,255,0.5) !important;
+opacity: 1 !important; margin: 0 calc(6px * var(--scale)) !important; transition: all 0.3s ease !important; }
+.swiper-pagination-bullet-active { width: calc(24px * var(--scale)) !important; background: #ffffff !important;
+border-radius: calc(999px * var(--scale)) !important; }
 /* ✅ FIX: Added touch-action and overscroll-behavior to prevent iOS background scrolling */
 .video-modal, .image-modal {
 display: none;
@@ -543,46 +535,74 @@ justify-content: center;
 align-items: center;
 opacity: 0;
 transition: opacity 0.3s ease;
-backdrop-filter: blur(8px);
+backdrop-filter: blur(calc(8px * var(--scale)));
 overscroll-behavior: none;
 touch-action: none;
 }
 .video-modal.active, .image-modal.active { display: flex;
 opacity: 1; }
-.modal-video-container { position: relative; width: 90vw; max-width: 1100px; display: flex; flex-direction: column; align-items: center;
+.modal-video-container { position: relative; width: 90vw; max-width: calc(1100px * var(--scale)); display: flex; flex-direction: column; align-items: center;
 }
-.modal-video-container video { width: 100%; max-height: 80vh; border-radius: 12px; box-shadow: 0 15px 40px rgba(0,0,0,0.6); outline: none; background: #000;
+.modal-video-container video { width: 100%; max-height: 80vh; border-radius: calc(12px * var(--scale)); box-shadow: 0 calc(15px * var(--scale)) calc(40px * var(--scale)) rgba(0,0,0,0.6); outline: none; background: #000;
 }
-.close-modal { position: absolute; top: -45px; right: 0; color: #fff; font-size: 32px; font-weight: bold; cursor: pointer; background: rgba(255,255,255,0.1); border: none;
-width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; transition: background 0.2s; }
+.close-modal { position: absolute; top: calc(-45px * var(--scale)); right: 0; color: #fff; font-size: calc(32px * var(--scale)); font-weight: bold; cursor: pointer; background: rgba(255,255,255,0.1); border: none;
+width: calc(40px * var(--scale)); height: calc(40px * var(--scale)); border-radius: 50%; display: flex; align-items: center; justify-content: center; transition: background 0.2s; }
 .close-modal:hover { background: rgba(255,255,255,0.3);
 }
-.modal-title { color: #fff; font-family: 'Tarik', sans-serif; margin-top: 15px; font-size: 18px; text-align: center; direction: rtl; }
+.modal-title { color: #fff; font-family: 'Tarik', sans-serif; margin-top: calc(15px * var(--scale)); font-size: calc(18px * var(--scale)); text-align: center; direction: rtl; }
 .modal-image-container { position: relative;
-width: 90vw; max-width: 1100px; display: flex; flex-direction: column; align-items: center; }
-.modal-image-container img { max-width: 100%; max-height: 80vh; border-radius: 12px;
-box-shadow: 0 15px 40px rgba(0,0,0,0.6); outline: none; background: #000; transition: transform 0.3s ease; transform-origin: center center; cursor: zoom-in; user-select: none;
+width: 90vw; max-width: calc(1100px * var(--scale)); display: flex; flex-direction: column; align-items: center; }
+.modal-image-container img { max-width: 100%; max-height: 80vh; border-radius: calc(12px * var(--scale));
+box-shadow: 0 calc(15px * var(--scale)) calc(40px * var(--scale)) rgba(0,0,0,0.6); outline: none; background: #000; transition: transform 0.3s ease; transform-origin: center center; cursor: zoom-in; user-select: none;
 touch-action: none; -webkit-user-drag: none; }
-.zoom-controls { position: absolute; bottom: -50px; display: flex; gap: 15px; z-index: 10;
+.zoom-controls { position: absolute; bottom: calc(-50px * var(--scale)); display: flex; gap: calc(15px * var(--scale)); z-index: 10;
 }
-.zoom-controls button { background: rgba(255,255,255,0.15); border: 1px solid rgba(255,255,255,0.3); color: #fff; width: 40px; height: 40px; border-radius: 50%; font-size: 20px;
+.zoom-controls button { background: rgba(255,255,255,0.15); border: calc(1px * var(--scale)) solid rgba(255,255,255,0.3); color: #fff; width: calc(40px * var(--scale)); height: calc(40px * var(--scale)); border-radius: 50%; font-size: calc(20px * var(--scale));
 cursor: pointer; transition: all 0.2s; display: flex; align-items: center; justify-content: center; }
 .zoom-controls button:hover { background: rgba(255,255,255,0.3); transform: scale(1.1);
 }
-@media screen and (max-width: 768px) {
-.swiper-frame { --swiper-navigation-size: 42px; }
-.slide-text { bottom: 50px; left: 15px; right: 15px; padding: 12px 16px;
+@media (max-width: 1024px) {
+.swiper-frame {
+width: calc(100% - calc(40px * var(--m-scale))) !important;
+max-width: 100% !important;
+height: auto !important;
+aspect-ratio: 16 / 9 !important;
+margin: 0 auto !important;
+border-radius: calc(16px * var(--m-scale)) !important;
+transform: none !important; /* Protects mobile responsive stacking */
+--swiper-navigation-size: calc(36px * var(--m-scale));
 }
-.slide-text h3 { font-size: 16px; }
-.swiper-button-prev::after, .swiper-button-next::after { font-size: 18px !important; }
-.swiper-button-prev svg, .swiper-button-next svg { width: 18px !important;
-height: 18px !important; stroke-width: 3px !important; }
-.swiper-pagination { bottom: 12px !important; }
-.swiper-pagination-bullet { width: 7px !important; height: 7px !important;
-margin: 0 5px !important; }
-.swiper-pagination-bullet-active { width: 20px !important; }
-/* ✅ Hide Custom Desktop SVGs on Mobile */
-.desktop-svg-overlay { display: none !important;
+.slide-text {
+bottom: calc(37px * var(--m-scale)) !important;
+left: calc(20px * var(--m-scale)) !important;
+right: calc(20px * var(--m-scale)) !important;
+padding: calc(12px * var(--m-scale)) calc(16px * var(--m-scale)) !important;
+border-radius: calc(15px * var(--m-scale)) !important;
+}
+.slide-text h3 {
+font-size: calc(14px * var(--m-scale)) !important;
+}
+.swiper-button-prev::after, .swiper-button-next::after {
+font-size: calc(18px * var(--m-scale)) !important;
+}
+.swiper-button-prev svg, .swiper-button-next svg {
+width: calc(18px * var(--m-scale)) !important;
+height: calc(18px * var(--m-scale)) !important;
+stroke-width: calc(3px * var(--m-scale)) !important;
+}
+.swiper-pagination {
+bottom: calc(12px * var(--m-scale)) !important;
+}
+.swiper-pagination-bullet {
+width: calc(7px * var(--m-scale)) !important;
+height: calc(7px * var(--m-scale)) !important;
+margin: 0 calc(5px * var(--m-scale)) !important;
+}
+.swiper-pagination-bullet-active {
+width: calc(20px * var(--m-scale)) !important;
+}
+.desktop-svg-overlay {
+display: none !important;
 }
 }
 /* ========================================== */
@@ -590,7 +610,7 @@ margin: 0 5px !important; }
 /* ========================================== */
 .slider-mobile-title { display: none;
 }
-@media screen and (max-width: 768px) {
+@media (max-width: 1024px) {
 body {
 background-image: url('https://uploadkon.ir/uploads/7f2d10_26site-akharin.png'), linear-gradient(to bottom right, #caf4ff, #73e1fd) !important;
 background-size: 100% auto !important;
@@ -599,30 +619,19 @@ background-position: top center !important;
 background-repeat: no-repeat !important;
 /* ❌ FIX: Removed transform: translateZ(0) !important;
 to fix fixed positioning */
-/* ✅ FIX: Changed min-height from 5800px to auto to remove excess empty space on mobile */
-min-height: auto !important;
-}
-.swiper-frame {
-width: calc(100% - 40px) !important;
-max-width: 100% !important;
-height: auto !important;
-aspect-ratio: 16 / 9 !important;
-margin: 0 auto !important;
-border-radius: 16px !important;
-transform: none !important; /* Protects mobile responsive stacking */
+min-height: calc(100vw * 6.2067) !important;
 }
 .slider-click-hint {
-margin: 0 !important;
-/* Resets positional margin injected for desktop tracking */
+display: none !important;
 }
 .sticker-layer {
 display: none !important;
 visibility: hidden !important;
 }
 .header-placeholder {
-padding: 320px 15px !important;
-margin-bottom: 40px !important;
-min-height: 280px !important;
+padding: calc(260px * var(--m-scale)) calc(15px * var(--m-scale)) !important;
+margin-bottom: calc(40px * var(--m-scale)) !important;
+min-height: calc(220px * var(--m-scale)) !important;
 }
 .slider-mobile-title {
 display: block !important;
@@ -631,38 +640,51 @@ top: auto !important;
 bottom: auto !important;
 left: auto !important;
 right: auto !important;
-margin: 0 0 20px 0 !important;
+margin: 0 0 calc(15px * var(--m-scale)) 0 !important;
 font-family: 'Unigeo64', sans-serif !important;
-font-size: 13px !important;
+font-size: calc(12px * var(--m-scale)) !important;
 font-weight: 800 !important;
 color: #ffffff !important;
 text-transform: uppercase !important;
 text-align: center !important;
-padding: 0 15px !important;
-letter-spacing: 1px !important;
-text-shadow: 0 2px 6px rgba(0,0,0,0.8) !important;
+padding: 0 calc(15px * var(--m-scale)) !important;
+letter-spacing: calc(1px * var(--m-scale)) !important;
+text-shadow: 0 calc(2px * var(--m-scale)) calc(6px * var(--m-scale)) rgba(0,0,0,0.8) !important;
 z-index: 20 !important;
 pointer-events: none !important;
 line-height: 1.3 !important;
 }
-.slider-section {
-margin-bottom: 180px !important;
-}
-}
-@media screen and (max-width: 480px) {
-.header-placeholder {
-padding: 260px 10px !important;
-min-height: 220px !important;
-}
-.slider-mobile-title {
-font-size: 11px !important;
-bottom: auto !important;
-margin-bottom: 15px !important;
-letter-spacing: 0.5px !important;
-}
-.swiper-frame {
-width: calc(100% - 24px) !important;
-}
+  .slider-section {
+    margin-bottom: calc(180px * var(--m-scale)) !important;
+  }
+  .slider-section:last-of-type {
+    margin-bottom: calc(10px * var(--m-scale)) !important;
+  }
+  .contact-footer {
+    margin-top: calc(-230px * var(--m-scale)) !important;
+    padding: calc(15px * var(--m-scale)) calc(10px * var(--m-scale)) calc(25px * var(--m-scale)) !important;
+  }
+  .contact-footer .contact-row {
+    flex-direction: column !important;
+    gap: calc(14px * var(--m-scale)) !important;
+  }
+  .contact-footer .separator {
+    display: none !important;
+  }
+  .contact-footer a {
+    font-size: calc(15px * var(--m-scale)) !important;
+    padding: calc(10px * var(--m-scale)) calc(20px * var(--m-scale)) !important;
+    width: 100% !important;
+    max-width: calc(300px * var(--m-scale)) !important;
+    justify-content: center !important;
+    border-radius: calc(12px * var(--m-scale)) !important;
+    border-width: calc(1.5px * var(--m-scale)) !important;
+    gap: calc(12px * var(--m-scale)) !important;
+  }
+  .contact-footer a svg {
+    width: calc(18px * var(--m-scale)) !important;
+    height: calc(18px * var(--m-scale)) !important;
+  }
 }
 </style>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
@@ -671,10 +693,11 @@ width: calc(100% - 24px) !important;
 <img class="desktop-svg-overlay name-svg-overlay" src="https://raw.githubusercontent.com/seanaasamavi/svg/8f86a66cd0a8652b3af2e2b4e10f21de66e38767/seanaa.svg" alt="Name">
 <img class="desktop-svg-overlay welcome-svg-overlay" src="https://raw.githubusercontent.com/seanaasamavi/svg/8f86a66cd0a8652b3af2e2b4e10f21de66e38767/welcom.svg" alt="Welcome">
 
-<video class="sticker-layer" src="https://raw.githubusercontent.com/seanaasamavi/sticker/main/Pre-comp%201-1.webm" autoplay loop muted playsinline style="top: 5200px; left: 1030px; width: 500px;"></video>
-<video class="sticker-layer" src="https://raw.githubusercontent.com/seanaasamavi/sticker/main/Pre-comp%202-1.webm" autoplay loop muted playsinline style="top: 2600px; left: 1200px; width: 350px;"></video>
-<video class="sticker-layer" src="https://raw.githubusercontent.com/seanaasamavi/last-one/b3c72b36c18f2c243d7d6f010d26f9f015f9f80e/01-0.webm" autoplay loop muted playsinline style="top: 800px; left: -10px; width: 1700px;"></video>
-<video class="sticker-layer" src="https://github.com/seanaa-portfolio/portfolio/blob/1868fd49f0166ff1dcbebbc8b64f8f5637c55130/3-1.webm" autoplay loop muted playsinline style="top: 772px; left: 138px; width: 400px;"></video>
+<video class="sticker-layer" src="https://raw.githubusercontent.com/seanaasamavi/sticker/main/Pre-comp%201-1.webm" loop muted playsinline preload="none" style="top: calc(5200px * var(--scale)); left: calc(1030px * var(--scale)); width: calc(500px * var(--scale));"></video>
+<video class="sticker-layer" src="https://raw.githubusercontent.com/seanaasamavi/sticker/main/Pre-comp%202-1.webm" loop muted playsinline preload="none" style="top: calc(2600px * var(--scale)); left: calc(1300px * var(--scale)); width: calc(400px * var(--scale));"></video>
+<video class="sticker-layer" src="https://raw.githubusercontent.com/seanaasamavi/sticker/2ea9aff9a81699f2bb08142a8dbe713e493c3148/Pre-comp%203-1.webm" loop muted playsinline preload="none" style="top: calc(3450px * var(--scale)); left: calc(200px * var(--scale)); width: calc(350px * var(--scale));"></video>
+<video class="sticker-layer" src="https://raw.githubusercontent.com/seanaasamavi/last-one/b3c72b36c18f2c243d7d6f010d26f9f015f9f80e/01-0.webm" loop muted playsinline preload="none" style="top: calc(890px * var(--scale)); left: calc(-10px * var(--scale)); width: calc(2000px * var(--scale));"></video>
+
 <div class="wrap">
 <div class="header-placeholder"></div>
 </div>
@@ -692,47 +715,47 @@ width: calc(100% - 24px) !important;
 <div class="swiper blogix-swiper">
 <div class="swiper-wrapper">
 <div class="swiper-slide" data-src="https://raw.githubusercontent.com/seanaasamavi/after-effect/main/01-1.mp4" data-title="پلان هایی از پروژه موشن گرافیک شرکت هوشمند سپهر">
-<video class="slide-media" muted playsinline autoplay preload="metadata" loop><source src="https://raw.githubusercontent.com/seanaasamavi/after-effect/main/01-1.mp4" type="video/mp4"></video>
+<video class="slide-media" muted playsinline preload="metadata" loop><source src="https://raw.githubusercontent.com/seanaasamavi/after-effect/main/01-1.mp4" type="video/mp4"></video>
 <div class="slide-text"><h3>پلان هایی از پروژه موشن گرافیک شرکت هوشمند سپهر</h3></div>
 </div>
 <div class="swiper-slide" data-src="https://raw.githubusercontent.com/seanaasamavi/after-effect/main/02-1.mp4" data-title="پلان هایی از پروژه موشن گرافیک شرکت هوشمند سپهر">
-<video class="slide-media" muted playsinline autoplay preload="metadata" loop><source src="https://raw.githubusercontent.com/seanaasamavi/after-effect/main/02-1.mp4" type="video/mp4"></video>
+<video class="slide-media" muted playsinline preload="none" loop><source src="https://raw.githubusercontent.com/seanaasamavi/after-effect/main/02-1.mp4" type="video/mp4"></video>
 <div class="slide-text"><h3>پلان هایی از پروژه موشن گرافیک شرکت هوشمند سپهر</h3></div>
 </div>
 <div class="swiper-slide" data-src="https://raw.githubusercontent.com/seanaasamavi/after-effect/main/03-1.mp4" data-title="پلان هایی از پروژه موشن گرافیک شرکت هوشمند سپهر">
-<video class="slide-media" muted playsinline autoplay preload="metadata" loop><source src="https://raw.githubusercontent.com/seanaasamavi/after-effect/main/03-1.mp4" type="video/mp4"></video>
+<video class="slide-media" muted playsinline preload="none" loop><source src="https://raw.githubusercontent.com/seanaasamavi/after-effect/main/03-1.mp4" type="video/mp4"></video>
 <div class="slide-text"><h3>پلان هایی از پروژه موشن گرافیک شرکت هوشمند سپهر</h3></div>
 </div>
 <div class="swiper-slide" data-src="https://raw.githubusercontent.com/seanaasamavi/after-effect/main/12-1.mp4" data-title="پلان هایی از پروژه موشن‌گرافیک شرکت هوشمند سپهر">
-<video class="slide-media" muted playsinline autoplay preload="metadata" loop><source src="https://raw.githubusercontent.com/seanaasamavi/after-effect/main/12-1.mp4" type="video/mp4"></video>
+<video class="slide-media" muted playsinline preload="none" loop><source src="https://raw.githubusercontent.com/seanaasamavi/after-effect/main/12-1.mp4" type="video/mp4"></video>
 <div class="slide-text"><h3>پلان هایی از پروژه موشن‌گرافیک شرکت هوشمند سپهر</h3></div>
 </div>
 <div class="swiper-slide" data-src="https://raw.githubusercontent.com/seanaasamavi/after-effect/main/11-1.mp4" data-title="پلان هایی از پروژه موشن‌گرافیک شرکت گاز ملی ایران">
-<video class="slide-media" muted playsinline autoplay preload="metadata" loop><source src="https://raw.githubusercontent.com/seanaasamavi/after-effect/main/11-1.mp4" type="video/mp4"></video>
+<video class="slide-media" muted playsinline preload="none" loop><source src="https://raw.githubusercontent.com/seanaasamavi/after-effect/main/11-1.mp4" type="video/mp4"></video>
 <div class="slide-text"><h3>پلان هایی از پروژه موشن‌گرافیک شرکت گاز ملی ایران</h3></div>
 </div>
 <div class="swiper-slide" data-src="https://raw.githubusercontent.com/seanaasamavi/after-effect/main/04-1.mp4" data-title="پلان تستی انیمت کارکتر 2D">
-<video class="slide-media" muted playsinline autoplay preload="metadata" loop><source src="https://raw.githubusercontent.com/seanaasamavi/after-effect/main/04-1.mp4" type="video/mp4"></video>
+<video class="slide-media" muted playsinline preload="none" loop><source src="https://raw.githubusercontent.com/seanaasamavi/after-effect/main/04-1.mp4" type="video/mp4"></video>
 <div class="slide-text"><h3>پلان تستی انیمت کارکتر 2D</h3></div>
 </div>
 <div class="swiper-slide" data-src="https://raw.githubusercontent.com/seanaasamavi/after-effect/main/06-1.mp4" data-title="پروژه تست تکسچر سازی شیشه cinema 4D">
-<video class="slide-media" muted playsinline autoplay preload="metadata" loop><source src="https://raw.githubusercontent.com/seanaasamavi/after-effect/main/06-1.mp4" type="video/mp4"></video>
+<video class="slide-media" muted playsinline preload="none" loop><source src="https://raw.githubusercontent.com/seanaasamavi/after-effect/main/06-1.mp4" type="video/mp4"></video>
 <div class="slide-text"><h3>پروژه تست تکسچر سازی شیشه cinema 4D</h3></div>
 </div>
 <div class="swiper-slide" data-src="https://raw.githubusercontent.com/seanaasamavi/after-effect/main/05-1.mp4" data-title="سفارش پروژه دانشجو">
-<video class="slide-media" muted playsinline autoplay preload="metadata" loop><source src="https://raw.githubusercontent.com/seanaasamavi/after-effect/main/05-1.mp4" type="video/mp4"></video>
+<video class="slide-media" muted playsinline preload="none" loop><source src="https://raw.githubusercontent.com/seanaasamavi/after-effect/main/05-1.mp4" type="video/mp4"></video>
 <div class="slide-text"><h3>سفارش پروژه دانشجو</h3></div>
 </div>
 <div class="swiper-slide" data-src="https://raw.githubusercontent.com/seanaasamavi/after-effect/main/07-1.mp4" data-title="پروژه تست افکت اسلایدر کنترل">
-<video class="slide-media" muted playsinline autoplay preload="metadata" loop><source src="https://raw.githubusercontent.com/seanaasamavi/after-effect/main/07-1.mp4" type="video/mp4"></video>
+<video class="slide-media" muted playsinline preload="none" loop><source src="https://raw.githubusercontent.com/seanaasamavi/after-effect/main/07-1.mp4" type="video/mp4"></video>
 <div class="slide-text"><h3>پروژه تست افکت اسلایدر کنترل</h3></div>
 </div>
 <div class="swiper-slide" data-src="https://raw.githubusercontent.com/seanaasamavi/after-effect/main/08-1.mp4" data-title="پروژه تست افکت redgiant trapcode particul">
-<video class="slide-media" muted playsinline autoplay preload="metadata" loop><source src="https://raw.githubusercontent.com/seanaasamavi/after-effect/main/08-1.mp4" type="video/mp4"></video>
+<video class="slide-media" muted playsinline preload="none" loop><source src="https://raw.githubusercontent.com/seanaasamavi/after-effect/main/08-1.mp4" type="video/mp4"></video>
 <div class="slide-text"><h3>پروژه تست افکت redgiant trapcode particul</h3></div>
 </div>
 <div class="swiper-slide" data-src="https://raw.githubusercontent.com/seanaasamavi/after-effect/main/09-1.mp4" data-title="یکی از چند موشن تبلیغاتی منچیکو">
-<video class="slide-media" muted playsinline autoplay preload="metadata" loop><source src="https://raw.githubusercontent.com/seanaasamavi/after-effect/main/09-1.mp4" type="video/mp4"></video>
+<video class="slide-media" muted playsinline preload="none" loop><source src="https://raw.githubusercontent.com/seanaasamavi/after-effect/main/09-1.mp4" type="video/mp4"></video>
 <div class="slide-text"><h3>یکی از چند موشن تبلیغاتی منچیکو</h3></div>
 </div>
 </div>
@@ -750,27 +773,27 @@ width: calc(100% - 24px) !important;
 <div class="swiper blogix-swiper">
 <div class="swiper-wrapper">
 <div class="swiper-slide" data-src="https://raw.githubusercontent.com/seanaasamavi/moho/main/01-1.mp4" data-title="جان‌بخشی و انیمیت راه رفتن">
-<video class="slide-media" muted playsinline autoplay preload="metadata" loop><source src="https://raw.githubusercontent.com/seanaasamavi/moho/main/01-1.mp4" type="video/mp4"></video>
+<video class="slide-media" muted playsinline preload="metadata" loop><source src="https://raw.githubusercontent.com/seanaasamavi/moho/main/01-1.mp4" type="video/mp4"></video>
 <div class="slide-text"><h3>جان‌بخشی و انیمیت راه رفتن</h3></div>
 </div>
 <div class="swiper-slide" data-src="https://raw.githubusercontent.com/seanaasamavi/moho/main/02-1.mp4" data-title="جان‌بخشی و انیمیت دویدن">
-<video class="slide-media" muted playsinline autoplay preload="metadata" loop><source src="https://raw.githubusercontent.com/seanaasamavi/moho/main/02-1.mp4" type="video/mp4"></video>
+<video class="slide-media" muted playsinline preload="none" loop><source src="https://raw.githubusercontent.com/seanaasamavi/moho/main/02-1.mp4" type="video/mp4"></video>
 <div class="slide-text"><h3>جان‌بخشی و انیمیت دویدن</h3></div>
 </div>
 <div class="swiper-slide" data-src="https://raw.githubusercontent.com/seanaasamavi/moho/main/03-1.mp4" data-title="جان‌بخشی و انیمیت دنبال کردن">
-<video class="slide-media" muted playsinline autoplay preload="metadata" loop><source src="https://raw.githubusercontent.com/seanaasamavi/moho/main/03-1.mp4" type="video/mp4"></video>
+<video class="slide-media" muted playsinline preload="none" loop><source src="https://raw.githubusercontent.com/seanaasamavi/moho/main/03-1.mp4" type="video/mp4"></video>
 <div class="slide-text"><h3>جان‌بخشی و انیمیت دنبال کردن</h3></div>
 </div>
 <div class="swiper-slide" data-src="https://raw.githubusercontent.com/seanaasamavi/moho/main/04-1.mp4" data-title="جان‌بخشی و انیمیت پرش">
-<video class="slide-media" muted playsinline autoplay preload="metadata" loop><source src="https://raw.githubusercontent.com/seanaasamavi/moho/main/04-1.mp4" type="video/mp4"></video>
+<video class="slide-media" muted playsinline preload="none" loop><source src="https://raw.githubusercontent.com/seanaasamavi/moho/main/04-1.mp4" type="video/mp4"></video>
 <div class="slide-text"><h3>جان‌بخشی و انیمیت پرش</h3></div>
 </div>
 <div class="swiper-slide" data-src="https://raw.githubusercontent.com/seanaasamavi/moho/main/05-1.mp4" data-title="جان‌بخشی و انیمیت پرش و نشست">
-<video class="slide-media" muted playsinline autoplay preload="metadata" loop><source src="https://raw.githubusercontent.com/seanaasamavi/moho/main/05-1.mp4" type="video/mp4"></video>
+<video class="slide-media" muted playsinline preload="none" loop><source src="https://raw.githubusercontent.com/seanaasamavi/moho/main/05-1.mp4" type="video/mp4"></video>
 <div class="slide-text"><h3>جان‌بخشی و انیمیت پرش و نشست</h3></div>
 </div>
 <div class="swiper-slide" data-src="https://raw.githubusercontent.com/seanaasamavi/moho/main/06-1.mp4" data-title="جان‌بخشی و انیمیت لیپ سینک">
-<video class="slide-media" muted playsinline autoplay preload="metadata" loop><source src="https://raw.githubusercontent.com/seanaasamavi/moho/main/06-1.mp4" type="video/mp4"></video>
+<video class="slide-media" muted playsinline preload="none" loop><source src="https://raw.githubusercontent.com/seanaasamavi/moho/main/06-1.mp4" type="video/mp4"></video>
 <div class="slide-text"><h3>جان‌بخشی و انیمیت لیپ سینک</h3></div>
 </div>
 </div>
@@ -792,47 +815,47 @@ width: calc(100% - 24px) !important;
 <div class="slide-text"><h3>پروژه دانشگاهی تصویر سازی از شخص من</h3></div>
 </div>
 <div class="swiper-slide" data-src="https://uploadkon.ir/uploads/630907_2602.jpg" data-title="پروژه دانشگاهی خلاصه سازی">
-<img class="slide-media" src="https://uploadkon.ir/uploads/630907_2602.jpg" alt="پروژه دانشگاهی خلاصه سازی">
+<img class="slide-media" src="https://uploadkon.ir/uploads/630907_2602.jpg" alt="پروژه دانشگاهی خلاصه سازی" loading="lazy">
 <div class="slide-text"><h3>پروژه دانشگاهی خلاصه سازی</h3></div>
 </div>
 <div class="swiper-slide" data-src="https://uploadkon.ir/uploads/73f607_2606.jpg" data-title="پروژه دانشگاهی فتو مونتاژ">
-<img class="slide-media" src="https://uploadkon.ir/uploads/73f607_2606.jpg" alt="پروژه دانشگاهی فتو مونتاژ">
+<img class="slide-media" src="https://uploadkon.ir/uploads/73f607_2606.jpg" alt="پروژه دانشگاهی فتو مونتاژ" loading="lazy">
 <div class="slide-text"><h3>پروژه دانشگاهی فتو مونتاژ</h3></div>
 </div>
 <div class="swiper-slide" data-src="https://uploadkon.ir/uploads/707307_2601.jpg" data-title="پروژه دانشگاهی طراحی پوستر">
-<img class="slide-media" src="https://uploadkon.ir/uploads/707307_2601.jpg" alt="پروژه دانشگاهی طراحی پوستر">
+<img class="slide-media" src="https://uploadkon.ir/uploads/707307_2601.jpg" alt="پروژه دانشگاهی طراحی پوستر" loading="lazy">
 <div class="slide-text"><h3>پروژه دانشگاهی طراحی پوستر</h3></div>
 </div>
 <div class="swiper-slide" data-src="https://uploadkon.ir/uploads/136607_2605.jpg" data-title="پروژه شخصی طراحی دعوت‌نامه">
-<img class="slide-media" src="https://uploadkon.ir/uploads/136607_2605.jpg" alt="پروژه شخصی طراحی دعوت‌نامه">
+<img class="slide-media" src="https://uploadkon.ir/uploads/136607_2605.jpg" alt="پروژه شخصی طراحی دعوت‌نامه" loading="lazy">
 <div class="slide-text"><h3>پروژه شخصی طراحی دعوت‌نامه</h3></div>
 </div>
 <div class="swiper-slide" data-src="https://uploadkon.ir/uploads/479707_2607.jpg" data-title="پروژه شخصی طراحی لوگو و تایپوگرافی بیکری یگانه">
-<img class="slide-media" src="https://uploadkon.ir/uploads/479707_2607.jpg" alt="پروژه شخصی طراحی لوگو و تایپوگرافی بیکری یگانه">
+<img class="slide-media" src="https://uploadkon.ir/uploads/479707_2607.jpg" alt="پروژه شخصی طراحی لوگو و تایپوگرافی بیکری یگانه" loading="lazy">
 <div class="slide-text"><h3>پروژه شخصی طراحی لوگو و تایپوگرافی بیکری یگانه</h3></div>
 </div>
 <div class="swiper-slide" data-src="https://uploadkon.ir/uploads/e55607_2603.jpg" data-title="پروژه دانشگاهی تایپوگرافی طهران">
-<img class="slide-media" src="https://uploadkon.ir/uploads/e55607_2603.jpg" alt="پروژه دانشگاهی تایپوگرافی طهران">
+<img class="slide-media" src="https://uploadkon.ir/uploads/e55607_2603.jpg" alt="پروژه دانشگاهی تایپوگرافی طهران" loading="lazy">
 <div class="slide-text"><h3>پروژه دانشگاهی تایپوگرافی طهران</h3></div>
 </div>
 <div class="swiper-slide" data-src="https://uploadkon.ir/uploads/bbab07_2604.jpg" data-title="پروژه دانشگاهی تایپوگرافی توربو">
-<img class="slide-media" src="https://uploadkon.ir/uploads/bbab07_2604.jpg" alt="پروژه دانشگاهی تایپوگرافی توربو">
+<img class="slide-media" src="https://uploadkon.ir/uploads/bbab07_2604.jpg" alt="پروژه دانشگاهی تایپوگرافی توربو" loading="lazy">
 <div class="slide-text"><h3>پروژه دانشگاهی تایپوگرافی توربو</h3></div>
 </div>
 <div class="swiper-slide" data-src="https://uploadkon.ir/uploads/6b8607_2609.jpg" data-title="پروژه شخصی طراحی تابلو دکوراتیو">
-<img class="slide-media" src="https://uploadkon.ir/uploads/6b8607_2609.jpg" alt="پروژه شخصی طراحی تابلو دکوراتیو">
+<img class="slide-media" src="https://uploadkon.ir/uploads/6b8607_2609.jpg" alt="پروژه شخصی طراحی تابلو دکوراتیو" loading="lazy">
 <div class="slide-text"><h3>پروژه شخصی طراحی تابلو دکوراتیو</h3></div>
 </div>
 <div class="swiper-slide" data-src="https://uploadkon.ir/uploads/931407_2610.jpg" data-title="پروژه شخصی طراحی تابلو دکوراتیو">
-<img class="slide-media" src="https://uploadkon.ir/uploads/931407_2610.jpg" alt="پروژه شخصی طراحی تابلو دکوراتیو">
+<img class="slide-media" src="https://uploadkon.ir/uploads/931407_2610.jpg" alt="پروژه شخصی طراحی تابلو دکوراتیو" loading="lazy">
 <div class="slide-text"><h3>پروژه شخصی طراحی تابلو دکوراتیو</h3></div>
 </div>
 <div class="swiper-slide" data-src="https://uploadkon.ir/uploads/614907_2611.jpg" data-title="پروژه شخصی طراحی تابلو دکوراتیو">
-<img class="slide-media" src="https://uploadkon.ir/uploads/614907_2611.jpg" alt="پروژه شخصی طراحی تابلو دکوراتیو">
+<img class="slide-media" src="https://uploadkon.ir/uploads/614907_2611.jpg" alt="پروژه شخصی طراحی تابلو دکوراتیو" loading="lazy">
 <div class="slide-text"><h3>پروژه شخصی طراحی تابلو دکوراتیو</h3></div>
 </div>
 <div class="swiper-slide" data-src="https://uploadkon.ir/uploads/137e07_2612.jpg" data-title="پروژه شخصی طراحی تابلو دکوراتیو">
-<img class="slide-media" src="https://uploadkon.ir/uploads/137e07_2612.jpg" alt="پروژه شخصی طراحی تابلو دکوراتیو">
+<img class="slide-media" src="https://uploadkon.ir/uploads/137e07_2612.jpg" alt="پروژه شخصی طراحی تابلو دکوراتیو" loading="lazy">
 <div class="slide-text"><h3>پروژه شخصی طراحی تابلو دکوراتیو</h3></div>
 </div>
 </div>
@@ -854,19 +877,19 @@ width: calc(100% - 24px) !important;
 <div class="slide-text"><h3>گواهی نرم‌افزار ایلوستریتور و فتوشاپ</h3></div>
 </div>
 <div class="swiper-slide" data-src="https://uploadkon.ir/uploads/fc6307_2602.jpg" data-title="گواهی نمایشگاه نقاشی کوشک باغ هنر">
-<img class="slide-media" src="https://uploadkon.ir/uploads/fc6307_2602.jpg" alt="گواهی نمایشگاه نقاشی کوشک باغ هنر">
+<img class="slide-media" src="https://uploadkon.ir/uploads/fc6307_2602.jpg" alt="گواهی نمایشگاه نقاشی کوشک باغ هنر" loading="lazy">
 <div class="slide-text"><h3>گواهی نمایشگاه نقاشی کوشک باغ هنر</h3></div>
 </div>
 <div class="swiper-slide" data-src="https://uploadkon.ir/uploads/2f9307_2603.jpg" data-title="گواهی نمایشگاه نقاشی برج میلاد هفتا">
-<img class="slide-media" src="https://uploadkon.ir/uploads/2f9307_2603.jpg" alt="گواهی نمایشگاه نقاشی برج میلاد هفتا">
+<img class="slide-media" src="https://uploadkon.ir/uploads/2f9307_2603.jpg" alt="گواهی نمایشگاه نقاشی برج میلاد هفتا" loading="lazy">
 <div class="slide-text"><h3>گواهی نمایشگاه نقاشی برج میلاد هفتا</h3></div>
 </div>
 <div class="swiper-slide" data-src="https://uploadkon.ir/uploads/ba2107_2604.jpg" data-title="گواهی نمایشگاه نقاشی budding art academy لندن">
-<img class="slide-media" src="https://uploadkon.ir/uploads/ba2107_2604.jpg" alt="گواهی نمایشگاه نقاشی budding art academy لندن">
+<img class="slide-media" src="https://uploadkon.ir/uploads/ba2107_2604.jpg" alt="گواهی نمایشگاه نقاشی budding art academy لندن" loading="lazy">
 <div class="slide-text"><h3>گواهی نمایشگاه نقاشی budding art academy لندن</h3></div>
 </div>
 <div class="swiper-slide" data-src="https://uploadkon.ir/uploads/d35807_2605.jpg" data-title="گواهی نمایشگاه نقاشی برج آزادی">
-<img class="slide-media" src="https://uploadkon.ir/uploads/d35807_2605.jpg" alt="گواهی نمایشگاه نقاشی برج آزادی">
+<img class="slide-media" src="https://uploadkon.ir/uploads/d35807_2605.jpg" alt="گواهی نمایشگاه نقاشی برج آزادی" loading="lazy">
 <div class="slide-text"><h3>گواهی نمایشگاه نقاشی برج آزادی</h3></div>
 </div>
 </div>
@@ -915,13 +938,44 @@ width: calc(100% - 24px) !important;
 <script>
 document.addEventListener('DOMContentLoaded', () => {
 const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
-if (!isTouchDevice) {
-document.querySelectorAll('.slide-media').forEach(media => {
+
+function playActiveMedia(swiperInstance, currentFrame) {
+currentFrame.querySelectorAll('.slide-media').forEach(media => {
 if (media.tagName === 'VIDEO') {
 media.pause();
 }
 });
+if (currentFrame.getAttribute('data-in-viewport') !== 'true') {
+return;
 }
+const activeSlide = swiperInstance.slides[swiperInstance.activeIndex];
+if (activeSlide) {
+const media = activeSlide.querySelector('.slide-media');
+if (media && media.tagName === 'VIDEO') {
+media.muted = true;
+if (media.getAttribute('preload') !== 'auto') {
+media.setAttribute('preload', 'auto');
+}
+const playPromise = media.play();
+if (playPromise !== undefined) {
+playPromise.catch(() => {
+setTimeout(() => {
+if (currentFrame.getAttribute('data-in-viewport') === 'true') {
+media.play().catch(() => {});
+}
+}, 100);
+});
+}
+}
+}
+}
+
+function pauseAllMedia(currentFrame) {
+currentFrame.querySelectorAll('.slide-media').forEach(media => {
+if (media.tagName === 'VIDEO') media.pause();
+});
+}
+
 document.querySelectorAll('.swiper-frame').forEach((frame) => {
 const swiperContainer = frame.querySelector('.blogix-swiper');
 const nextEl = frame.querySelector('.swiper-button-next');
@@ -951,57 +1005,76 @@ slideChangeTransitionStart: function() { pauseAllMedia(frame); },
 slideChangeTransitionEnd: function() { playActiveMedia(this, frame); }
 }
 });
-function playActiveMedia(swiperInstance, currentFrame) {
-currentFrame.querySelectorAll('.slide-media').forEach(media => {
-if (media.tagName === 'VIDEO') {
-media.pause();
-media.preload = 'metadata';
+frame.swiperInstance = swiper;
+});
+
+const swiperObserver = new IntersectionObserver((entries) => {
+entries.forEach(entry => {
+const frame = entry.target;
+const swiper = frame.swiperInstance;
+if (entry.isIntersecting) {
+frame.setAttribute('data-in-viewport', 'true');
+if (swiper) {
+playActiveMedia(swiper, frame);
+}
+} else {
+frame.setAttribute('data-in-viewport', 'false');
+pauseAllMedia(frame);
 }
 });
-const activeSlide = swiperInstance.slides[swiperInstance.activeIndex];
-if (activeSlide) {
-const media = activeSlide.querySelector('.slide-media');
-if (media && media.tagName === 'VIDEO') {
-media.muted = true;
-media.preload = 'auto';
-try { media.load();
-} catch(e) {}
-const playPromise = media.play();
-if (playPromise !== undefined) {
-playPromise.catch(() => {
-setTimeout(() => {
-media.play().catch(() => {});
-}, 100);
+}, { threshold: 0.1 });
+
+document.querySelectorAll('.swiper-frame').forEach(frame => {
+swiperObserver.observe(frame);
 });
+
+const stickerObserver = new IntersectionObserver((entries) => {
+entries.forEach(entry => {
+const video = entry.target;
+if (entry.isIntersecting) {
+if (video.getAttribute('preload') !== 'auto') {
+video.setAttribute('preload', 'auto');
 }
+video.muted = true;
+video.play().catch(() => {});
+} else {
+video.pause();
 }
-}
-}
-function pauseAllMedia(currentFrame) {
-currentFrame.querySelectorAll('.slide-media').forEach(media => {
-if (media.tagName === 'VIDEO') media.pause();
 });
-}
-if (!isTouchDevice) {
-const slides = frame.querySelectorAll('.swiper-slide');
-slides.forEach(slide => {
-slide.addEventListener('mouseenter', () => {
+}, { threshold: 0.05 });
+
+document.querySelectorAll('.sticker-layer').forEach(video => {
+stickerObserver.observe(video);
+});
+
+document.querySelectorAll('.swiper-frame').forEach(frame => {
+const swiperContainer = frame.querySelector('.blogix-swiper');
+if (!swiperContainer) return;
+
+swiperContainer.addEventListener('mouseover', (e) => {
+if (isTouchDevice) return;
+const slide = e.target.closest('.swiper-slide');
+if (!slide) return;
 const media = slide.querySelector('.slide-media');
 if (media && media.tagName === 'VIDEO' && media.paused) {
 media.muted = true;
-media.preload = 'auto';
-try { media.load(); } catch(e) {}
+if (media.getAttribute('preload') !== 'auto') {
+media.setAttribute('preload', 'auto');
+}
 media.play().catch(() => {});
 }
 });
-slide.addEventListener('mouseleave', () => {
+
+swiperContainer.addEventListener('mouseout', (e) => {
+if (isTouchDevice) return;
+const slide = e.target.closest('.swiper-slide');
+if (!slide) return;
+if (e.relatedTarget && slide.contains(e.relatedTarget)) return;
 const media = slide.querySelector('.slide-media');
 if (media && media.tagName === 'VIDEO' && !slide.classList.contains('swiper-slide-active')) {
 media.pause();
 }
 });
-});
-}
 });
 const videoModal = document.getElementById('videoModal');
 const modalVideo = document.getElementById('modalVideo');
